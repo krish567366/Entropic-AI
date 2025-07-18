@@ -1,0 +1,3873 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Generative Intelligence through Thermodynamic Self-Organization">
+      
+      
+        <meta name="author" content="Krishna Bajpai">
+      
+      
+        <link rel="canonical" href="https://krish567366.github.io/Entropic-AI/architecture/optimizers/">
+      
+      
+        <link rel="prev" href="../networks/">
+      
+      
+        <link rel="next" href="../diffusion/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Complexity Optimizers - Entropic AI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#thermodynamic-optimizers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Entropic AI Documentation" class="md-header__button md-logo" aria-label="Entropic AI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entropic AI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Complexity Optimizers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/krish567366/Entropic-AI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    krish567366/Entropic-AI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../theory/foundations/" class="md-tabs__link">
+          
+  
+  
+  Scientific Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../applications/molecules/" class="md-tabs__link">
+          
+  
+  
+  Applications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/molecule-design/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/faq/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/core/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../development/contributing/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/paper/" class="md-tabs__link">
+          
+  
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Entropic AI Documentation" class="md-nav__button md-logo" aria-label="Entropic AI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Entropic AI Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/krish567366/Entropic-AI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    krish567366/Entropic-AI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scientific Theory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scientific Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/thermodynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thermodynamic Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/entropy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entropy and Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/emergence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Emergent Order
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/mathematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mathematical Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thermodynamic Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Complexity Optimizers
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complexity Optimizers
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free-energy-minimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Free Energy Minimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variational-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variational Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermal-fluctuations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Fluctuations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langevin-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Langevin Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Langevin Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-langevin-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Langevin Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discretized-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discretized Update Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Temperature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-annealing-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulated Annealing Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulated Annealing Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-simulated-annealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical Simulated Annealing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-simulated-annealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuous Simulated Annealing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-tempering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Tempering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hamiltonian-monte-carlo-hmc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamiltonian Monte Carlo (HMC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hamiltonian Monte Carlo (HMC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hamiltonian-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamiltonian Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hamiltons-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamilton's Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leapfrog-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leapfrog Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-u-turn-sampler-nuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      No-U-Turn Sampler (NUTS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermodynamic-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Gradient Descent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thermodynamic Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-entropy-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy-Entropy Balance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermostat-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermostat Coupling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-entropy-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum Entropy Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maximum Entropy Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principle-of-maximum-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principle of Maximum Entropy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lagrangian-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lagrangian Formulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variational-free-energy-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variational Free Energy Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variational Free Energy Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variational-principle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variational Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mean-field-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mean Field Approximation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-ascent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Ascent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replica-exchange-monte-carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replica Exchange Monte Carlo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Replica Exchange Monte Carlo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Replicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exchange-moves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exchange Moves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-thermodynamic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Thermodynamic Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive Thermodynamic Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature Adaptation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-rate-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Rate Scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#momentum-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Momentum Adaptation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-objective-thermodynamic-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Objective Thermodynamic Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Objective Thermodynamic Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pareto-optimal-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pareto-Optimal Solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weighted-free-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weighted Free Energy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diversity-preservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diversity Preservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constrained-thermodynamic-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constrained Thermodynamic Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constrained Thermodynamic Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lagrangian-thermodynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lagrangian Thermodynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penalty-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Penalty Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barrier-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Barrier Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-neural-architecture-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Neural Architecture Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continual Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meta-Learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convergence Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convergence-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Conditions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixing-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixing Time
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerical-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computational-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Efficiency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-and-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation and Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation and Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Balance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ergodicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ergodicity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-conservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy Conservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyperparameter-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperparameter Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generative-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative Models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-traditional-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with Traditional Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison with Traditional Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-thermodynamic-optimizers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Thermodynamic Optimizers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-equilibrium-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Equilibrium Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-temperature-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Temperature Networks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diffusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generative Diffusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/molecules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Molecule Evolution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circuit Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/theories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Theory Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/custom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/molecule-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Molecule Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/circuit-synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circuit Synthesis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/law-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical Laws Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/advanced-config.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/custom-applications.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/utilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/paper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patent Information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free-energy-minimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Free Energy Minimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variational-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variational Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermal-fluctuations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermal Fluctuations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langevin-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Langevin Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Langevin Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-langevin-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Langevin Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discretized-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discretized Update Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Temperature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-annealing-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulated Annealing Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulated Annealing Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-simulated-annealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical Simulated Annealing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-simulated-annealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuous Simulated Annealing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-tempering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Tempering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hamiltonian-monte-carlo-hmc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamiltonian Monte Carlo (HMC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hamiltonian Monte Carlo (HMC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hamiltonian-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamiltonian Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hamiltons-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamilton's Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leapfrog-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leapfrog Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-u-turn-sampler-nuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      No-U-Turn Sampler (NUTS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermodynamic-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Gradient Descent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thermodynamic Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-entropy-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy-Entropy Balance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermostat-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermostat Coupling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-entropy-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum Entropy Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maximum Entropy Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principle-of-maximum-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principle of Maximum Entropy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lagrangian-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lagrangian Formulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variational-free-energy-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variational Free Energy Optimizer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variational Free Energy Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variational-principle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variational Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mean-field-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mean Field Approximation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-ascent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Ascent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replica-exchange-monte-carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replica Exchange Monte Carlo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Replica Exchange Monte Carlo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Replicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exchange-moves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exchange Moves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-thermodynamic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Thermodynamic Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive Thermodynamic Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature Adaptation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-rate-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Rate Scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#momentum-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Momentum Adaptation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-objective-thermodynamic-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Objective Thermodynamic Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Objective Thermodynamic Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pareto-optimal-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pareto-Optimal Solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weighted-free-energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weighted Free Energy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diversity-preservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diversity Preservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constrained-thermodynamic-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constrained Thermodynamic Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constrained Thermodynamic Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lagrangian-thermodynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lagrangian Thermodynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penalty-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Penalty Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barrier-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Barrier Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-neural-architecture-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Neural Architecture Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continual Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meta-Learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convergence Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convergence-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Conditions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixing-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixing Time
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerical-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computational-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Efficiency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-and-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation and Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation and Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Balance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ergodicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ergodicity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-conservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy Conservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyperparameter-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperparameter Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generative-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative Models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-traditional-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with Traditional Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison with Traditional Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-thermodynamic-optimizers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Thermodynamic Optimizers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-equilibrium-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Equilibrium Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-temperature-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Temperature Networks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="thermodynamic-optimizers">Thermodynamic Optimizers<a class="headerlink" href="#thermodynamic-optimizers" title="Permanent link">&para;</a></h1>
+<p>This section covers optimization algorithms specifically designed for thermodynamic systems, incorporating physical principles like energy minimization, entropy maximization, and thermal equilibration.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Thermodynamic optimizers extend traditional gradient-based methods by incorporating thermodynamic principles. These optimizers naturally balance exploration (high temperature) and exploitation (low temperature) while respecting physical constraints.</p>
+<h2 id="core-principles">Core Principles<a class="headerlink" href="#core-principles" title="Permanent link">&para;</a></h2>
+<h3 id="free-energy-minimization">Free Energy Minimization<a class="headerlink" href="#free-energy-minimization" title="Permanent link">&para;</a></h3>
+<p>The fundamental optimization principle:
+<span class="arithmatex">\(<span class="arithmatex">\(F = U - TS\)</span>\)</span></p>
+<p>Minimize free energy <span class="arithmatex">\(F\)</span> by balancing:</p>
+<ul>
+<li>Internal energy <span class="arithmatex">\(U\)</span> (cost function)</li>
+<li>Entropy term <span class="arithmatex">\(TS\)</span> (exploration)</li>
+</ul>
+<h3 id="variational-principle">Variational Principle<a class="headerlink" href="#variational-principle" title="Permanent link">&para;</a></h3>
+<p>For equilibrium states:
+<span class="arithmatex">\(<span class="arithmatex">\(\delta F = 0\)</span>\)</span></p>
+<p>Leading to the equilibrium condition:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial F}{\partial \theta_i} = 0 \quad \forall i\)</span>\)</span></p>
+<h3 id="thermal-fluctuations">Thermal Fluctuations<a class="headerlink" href="#thermal-fluctuations" title="Permanent link">&para;</a></h3>
+<p>Include thermal noise for exploration:
+<span class="arithmatex">\(<span class="arithmatex">\(\theta_{i,\text{new}} = \theta_{i,\text{old}} + \Delta\theta_i + \sqrt{2\gamma k_B T} \xi_i\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(\xi_i\)</span> is Gaussian white noise.</p>
+<h2 id="langevin-optimizer">Langevin Optimizer<a class="headerlink" href="#langevin-optimizer" title="Permanent link">&para;</a></h2>
+<h3 id="standard-langevin-dynamics">Standard Langevin Dynamics<a class="headerlink" href="#standard-langevin-dynamics" title="Permanent link">&para;</a></h3>
+<p>The fundamental stochastic differential equation:
+<span class="arithmatex">\(<span class="arithmatex">\(d\theta_t = -\frac{\partial U}{\partial \theta} dt + \sqrt{2\gamma k_B T} dW_t\)</span>\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(\theta_t\)</span> are parameters</li>
+<li><span class="arithmatex">\(U(\theta)\)</span> is the potential (loss function)</li>
+<li><span class="arithmatex">\(\gamma\)</span> is friction coefficient</li>
+<li><span class="arithmatex">\(T\)</span> is temperature</li>
+<li><span class="arithmatex">\(dW_t\)</span> is Wiener process</li>
+</ul>
+<h3 id="discretized-update-rule">Discretized Update Rule<a class="headerlink" href="#discretized-update-rule" title="Permanent link">&para;</a></h3>
+<p>For numerical integration:
+<span class="arithmatex">\(<span class="arithmatex">\(\theta_{t+1} = \theta_t - \eta \frac{\partial L}{\partial \theta} + \sqrt{2\eta k_B T} \xi_t\)</span>\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(\eta\)</span> is learning rate (time step)</li>
+<li><span class="arithmatex">\(L\)</span> is loss function</li>
+<li><span class="arithmatex">\(\xi_t \sim \mathcal{N}(0, I)\)</span></li>
+</ul>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">LangevinOptimizer</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">friction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">friction</span> <span class="o">=</span> <span class="n">friction</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">grad</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                <span class="c1"># Deterministic gradient term</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                <span class="n">grad_term</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="n">param</span><span class="o">.</span><span class="n">grad</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                <span class="c1"># Thermal noise term</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                <span class="n">noise_std</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">friction</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                <span class="n">noise_term</span> <span class="o">=</span> <span class="n">noise_std</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                <span class="c1"># Update parameter</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                <span class="n">param</span><span class="o">.</span><span class="n">data</span> <span class="o">+=</span> <span class="n">grad_term</span> <span class="o">+</span> <span class="n">noise_term</span>
+</span></code></pre></div>
+<h3 id="adaptive-temperature">Adaptive Temperature<a class="headerlink" href="#adaptive-temperature" title="Permanent link">&para;</a></h3>
+<p>Temperature can adapt based on convergence:
+<span class="arithmatex">\(<span class="arithmatex">\(T(t) = T_0 \cdot \text{schedule}(t, \text{convergence\_metric})\)</span>\)</span></p>
+<p>Common schedules:</p>
+<ul>
+<li><strong>Exponential cooling</strong>: <span class="arithmatex">\(T(t) = T_0 e^{-t/\tau}\)</span></li>
+<li><strong>Polynomial cooling</strong>: <span class="arithmatex">\(T(t) = T_0 / (1 + t)^{\alpha}\)</span></li>
+<li><strong>Adaptive</strong>: Based on gradient variance or loss plateaus</li>
+</ul>
+<h2 id="simulated-annealing-optimizer">Simulated Annealing Optimizer<a class="headerlink" href="#simulated-annealing-optimizer" title="Permanent link">&para;</a></h2>
+<h3 id="classical-simulated-annealing">Classical Simulated Annealing<a class="headerlink" href="#classical-simulated-annealing" title="Permanent link">&para;</a></h3>
+<p>Metropolis acceptance criterion:
+<span class="arithmatex">\(<span class="arithmatex">\(P_{\text{accept}} = \min\left(1, e^{-\Delta E / k_B T}\right)\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(\Delta E = E_{\text{new}} - E_{\text{old}}\)</span>.</p>
+<h3 id="continuous-simulated-annealing">Continuous Simulated Annealing<a class="headerlink" href="#continuous-simulated-annealing" title="Permanent link">&para;</a></h3>
+<p>For continuous parameters:
+<span class="arithmatex">\(<span class="arithmatex">\(\theta_{\text{new}} = \theta_{\text{old}} + \sigma(T) \cdot \mathcal{N}(0, I)\)</span>\)</span></p>
+<p>With temperature-dependent step size:
+<span class="arithmatex">\(<span class="arithmatex">\(\sigma(T) = \sigma_0 \sqrt{T / T_0}\)</span>\)</span></p>
+<h3 id="parallel-tempering">Parallel Tempering<a class="headerlink" href="#parallel-tempering" title="Permanent link">&para;</a></h3>
+<p>Multiple replicas at different temperatures:
+<span class="arithmatex">\(<span class="arithmatex">\(T_i = T_{\min} \left(\frac{T_{\max}}{T_{\min}}\right)^{i/N}\)</span>\)</span></p>
+<p>With periodic swaps between adjacent temperatures.</p>
+<h3 id="implementation_1">Implementation<a class="headerlink" href="#implementation_1" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">SimulatedAnnealingOptimizer</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">initial_temp</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">cooling_rate</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">initial_temp</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cooling_rate</span> <span class="o">=</span> <span class="n">cooling_rate</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">best_params</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">best_loss</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">):</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="c1"># Propose new parameters</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="n">old_params</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            <span class="n">noise</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            <span class="n">param</span><span class="o">.</span><span class="n">data</span> <span class="o">+=</span> <span class="n">noise</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="c1"># Evaluate new loss</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">new_loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">()</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>        <span class="c1"># Metropolis criterion</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept_move</span><span class="p">(</span><span class="n">new_loss</span><span class="p">):</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="k">if</span> <span class="n">new_loss</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_loss</span><span class="p">:</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">best_loss</span> <span class="o">=</span> <span class="n">new_loss</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">best_params</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">]</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            <span class="c1"># Reject move</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>            <span class="k">for</span> <span class="n">param</span><span class="p">,</span> <span class="n">old_param</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="n">old_params</span><span class="p">):</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>                <span class="n">param</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">old_param</span><span class="o">.</span><span class="n">data</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        <span class="c1"># Cool down</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cooling_rate</span>
+</span></code></pre></div>
+<h2 id="hamiltonian-monte-carlo-hmc">Hamiltonian Monte Carlo (HMC)<a class="headerlink" href="#hamiltonian-monte-carlo-hmc" title="Permanent link">&para;</a></h2>
+<h3 id="hamiltonian-dynamics">Hamiltonian Dynamics<a class="headerlink" href="#hamiltonian-dynamics" title="Permanent link">&para;</a></h3>
+<p>Introduce momentum variables:
+<span class="arithmatex">\(<span class="arithmatex">\(H(\theta, p) = U(\theta) + \frac{1}{2}p^T M^{-1} p\)</span>\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(U(\theta)\)</span> is potential energy (loss)</li>
+<li><span class="arithmatex">\(p\)</span> are momentum variables</li>
+<li><span class="arithmatex">\(M\)</span> is mass matrix</li>
+</ul>
+<h3 id="hamiltons-equations">Hamilton's Equations<a class="headerlink" href="#hamiltons-equations" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\frac{d\theta}{dt} = M^{-1} p$$
+$$\frac{dp}{dt} = -\frac{\partial U}{\partial \theta}\]</div>
+<h3 id="leapfrog-integration">Leapfrog Integration<a class="headerlink" href="#leapfrog-integration" title="Permanent link">&para;</a></h3>
+<p>Numerical integration scheme:
+<span class="arithmatex">\(<span class="arithmatex">\(p_{t+\epsilon/2} = p_t - \frac{\epsilon}{2} \frac{\partial U}{\partial \theta}\Big|_{\theta_t}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\theta_{t+\epsilon} = \theta_t + \epsilon M^{-1} p_{t+\epsilon/2}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(p_{t+\epsilon} = p_{t+\epsilon/2} - \frac{\epsilon}{2} \frac{\partial U}{\partial \theta}\Big|_{\theta_{t+\epsilon}}\)</span>\)</span></p>
+<h3 id="no-u-turn-sampler-nuts">No-U-Turn Sampler (NUTS)<a class="headerlink" href="#no-u-turn-sampler-nuts" title="Permanent link">&para;</a></h3>
+<p>Adaptive HMC that automatically tunes trajectory length.</p>
+<h2 id="thermodynamic-gradient-descent">Thermodynamic Gradient Descent<a class="headerlink" href="#thermodynamic-gradient-descent" title="Permanent link">&para;</a></h2>
+<h3 id="energy-entropy-balance">Energy-Entropy Balance<a class="headerlink" href="#energy-entropy-balance" title="Permanent link">&para;</a></h3>
+<p>Modified gradient with entropy regularization:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial \theta}{\partial t} = -\frac{\partial}{\partial \theta}\left(U(\theta) - T S(\theta)\right)\)</span>\)</span></p>
+<p>Where entropy can be parameter distribution entropy:
+<span class="arithmatex">\(<span class="arithmatex">\(S(\theta) = -\sum_i p_i(\theta) \log p_i(\theta)\)</span>\)</span></p>
+<h3 id="thermostat-coupling">Thermostat Coupling<a class="headerlink" href="#thermostat-coupling" title="Permanent link">&para;</a></h3>
+<p>Couple parameters to thermal reservoir:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial \theta}{\partial t} = -\frac{\partial U}{\partial \theta} - \gamma(\theta - \theta_{\text{eq}}) + \sqrt{2\gamma k_B T} \xi(t)\)</span>\)</span></p>
+<h3 id="implementation_2">Implementation<a class="headerlink" href="#implementation_2" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ThermodynamicGD</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">entropy_weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">entropy_weight</span> <span class="o">=</span> <span class="n">entropy_weight</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">compute_entropy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">total_entropy</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="c1"># Approximate entropy using parameter variance</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="n">entropy</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">param</span><span class="p">))</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="n">total_entropy</span> <span class="o">+=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">entropy</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="k">return</span> <span class="n">total_entropy</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">entropy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_entropy</span><span class="p">()</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>            <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">grad</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                <span class="c1"># Standard gradient term</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                <span class="n">grad_term</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="n">param</span><span class="o">.</span><span class="n">grad</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>                <span class="c1"># Entropy gradient (encourages diversity)</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>                <span class="n">entropy_grad</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">entropy</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>                <span class="n">entropy_term</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">entropy_weight</span> <span class="o">*</span> <span class="n">entropy_grad</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>                <span class="c1"># Thermal noise</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>                <span class="n">noise_term</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">)</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>                <span class="n">param</span><span class="o">.</span><span class="n">data</span> <span class="o">+=</span> <span class="n">grad_term</span> <span class="o">+</span> <span class="n">entropy_term</span> <span class="o">+</span> <span class="n">noise_term</span>
+</span></code></pre></div>
+<h2 id="maximum-entropy-optimizer">Maximum Entropy Optimizer<a class="headerlink" href="#maximum-entropy-optimizer" title="Permanent link">&para;</a></h2>
+<h3 id="principle-of-maximum-entropy">Principle of Maximum Entropy<a class="headerlink" href="#principle-of-maximum-entropy" title="Permanent link">&para;</a></h3>
+<p>Among all distributions consistent with constraints, choose the one with maximum entropy:
+<span class="arithmatex">\(<span class="arithmatex">\(\max_p S[p] = -\sum_i p_i \log p_i\)</span>\)</span></p>
+<p>Subject to:
+<span class="arithmatex">\(<span class="arithmatex">\(\sum_i p_i = 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\sum_i p_i f_k(x_i) = \langle f_k \rangle\)</span>\)</span></p>
+<h3 id="lagrangian-formulation">Lagrangian Formulation<a class="headerlink" href="#lagrangian-formulation" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\mathcal{L} = -\sum_i p_i \log p_i - \lambda_0\left(\sum_i p_i - 1\right) - \sum_k \lambda_k\left(\sum_i p_i f_k(x_i) - \langle f_k \rangle\right)\]</div>
+<h3 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h3>
+<p>Maximum entropy distribution:
+<span class="arithmatex">\(<span class="arithmatex">\(p_i = \frac{1}{Z} e^{-\sum_k \lambda_k f_k(x_i)}\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(Z = \sum_i e^{-\sum_k \lambda_k f_k(x_i)}\)</span> is partition function.</p>
+<h2 id="variational-free-energy-optimizer">Variational Free Energy Optimizer<a class="headerlink" href="#variational-free-energy-optimizer" title="Permanent link">&para;</a></h2>
+<h3 id="variational-principle_1">Variational Principle<a class="headerlink" href="#variational-principle_1" title="Permanent link">&para;</a></h3>
+<p>Minimize variational free energy:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{F}[q] = \langle E \rangle_q + T D_{KL}[q||p_0]\)</span>\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(q\)</span> is variational distribution</li>
+<li><span class="arithmatex">\(p_0\)</span> is prior</li>
+<li><span class="arithmatex">\(D_{KL}\)</span> is KL divergence</li>
+</ul>
+<h3 id="mean-field-approximation">Mean Field Approximation<a class="headerlink" href="#mean-field-approximation" title="Permanent link">&para;</a></h3>
+<p>Assume factorized form:
+<span class="arithmatex">\(<span class="arithmatex">\(q(\theta) = \prod_i q_i(\theta_i)\)</span>\)</span></p>
+<h3 id="coordinate-ascent">Coordinate Ascent<a class="headerlink" href="#coordinate-ascent" title="Permanent link">&para;</a></h3>
+<p>Update each factor:
+<span class="arithmatex">\(<span class="arithmatex">\(q_i^{*}(\theta_i) \propto \exp\left(\langle \log p(\theta, \mathcal{D}) \rangle_{q_{-i}}\right)\)</span>\)</span></p>
+<h2 id="replica-exchange-monte-carlo">Replica Exchange Monte Carlo<a class="headerlink" href="#replica-exchange-monte-carlo" title="Permanent link">&para;</a></h2>
+<h3 id="multiple-replicas">Multiple Replicas<a class="headerlink" href="#multiple-replicas" title="Permanent link">&para;</a></h3>
+<p>Run simulations at different temperatures simultaneously:
+<span class="arithmatex">\(<span class="arithmatex">\(T_1 &lt; T_2 &lt; \ldots &lt; T_n\)</span>\)</span></p>
+<h3 id="exchange-moves">Exchange Moves<a class="headerlink" href="#exchange-moves" title="Permanent link">&para;</a></h3>
+<p>Periodically attempt to swap configurations between adjacent temperatures:
+<span class="arithmatex">\(<span class="arithmatex">\(P_{\text{swap}} = \min\left(1, e^{(\beta_i - \beta_j)(E_j - E_i)}\right)\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(\beta = 1/(k_B T)\)</span>.</p>
+<h3 id="parallel-implementation">Parallel Implementation<a class="headerlink" href="#parallel-implementation" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ReplicaExchangeOptimizer</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">):</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">n_replicas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span> <span class="o">=</span> <span class="n">temperatures</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">replicas</span> <span class="o">=</span> <span class="p">[</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_replicas</span><span class="p">)]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">energies</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_replicas</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">exchange_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_replicas</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            <span class="c1"># Attempt swap between replicas i and i+1</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="n">beta_i</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="n">beta_j</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperatures</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            <span class="n">energy_diff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">energies</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">energies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            <span class="n">prob</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">beta_i</span> <span class="o">-</span> <span class="n">beta_j</span><span class="p">)</span> <span class="o">*</span> <span class="n">energy_diff</span><span class="p">))</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">prob</span><span class="p">:</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                <span class="c1"># Swap configurations</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">replicas</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">replicas</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replicas</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">replicas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">energies</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">energies</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">energies</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">energies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></code></pre></div>
+<h2 id="adaptive-thermodynamic-methods">Adaptive Thermodynamic Methods<a class="headerlink" href="#adaptive-thermodynamic-methods" title="Permanent link">&para;</a></h2>
+<h3 id="temperature-adaptation">Temperature Adaptation<a class="headerlink" href="#temperature-adaptation" title="Permanent link">&para;</a></h3>
+<p>Automatically adjust temperature based on acceptance rates:
+<span class="arithmatex">\(<span class="arithmatex">\(T_{\text{new}} = T_{\text{old}} \cdot \begin{cases}
+\alpha &gt; 0.5 &amp; \text{increase by factor } \gamma \\
+\alpha &lt; 0.3 &amp; \text{decrease by factor } \gamma \\
+\text{otherwise} &amp; \text{keep unchanged}
+\end{cases}\)</span>\)</span></p>
+<h3 id="learning-rate-scheduling">Learning Rate Scheduling<a class="headerlink" href="#learning-rate-scheduling" title="Permanent link">&para;</a></h3>
+<p>Couple learning rate to temperature:
+<span class="arithmatex">\(<span class="arithmatex">\(\eta(t) = \eta_0 \sqrt{T(t) / T_0}\)</span>\)</span></p>
+<h3 id="momentum-adaptation">Momentum Adaptation<a class="headerlink" href="#momentum-adaptation" title="Permanent link">&para;</a></h3>
+<p>Temperature-dependent momentum:
+<span class="arithmatex">\(<span class="arithmatex">\(\beta(t) = \beta_0 \left(1 - \frac{T(t)}{T_{\max}}\right)\)</span>\)</span></p>
+<h2 id="multi-objective-thermodynamic-optimization">Multi-Objective Thermodynamic Optimization<a class="headerlink" href="#multi-objective-thermodynamic-optimization" title="Permanent link">&para;</a></h2>
+<h3 id="pareto-optimal-solutions">Pareto-Optimal Solutions<a class="headerlink" href="#pareto-optimal-solutions" title="Permanent link">&para;</a></h3>
+<p>For multiple objectives:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{F}(\theta) = [f_1(\theta), f_2(\theta), \ldots, f_m(\theta)]\)</span>\)</span></p>
+<p>Use thermodynamic sampling to explore Pareto front.</p>
+<h3 id="weighted-free-energy">Weighted Free Energy<a class="headerlink" href="#weighted-free-energy" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[F_{\text{total}} = \sum_i w_i (U_i - T_i S_i)\]</div>
+<p>With objective-specific temperatures.</p>
+<h3 id="diversity-preservation">Diversity Preservation<a class="headerlink" href="#diversity-preservation" title="Permanent link">&para;</a></h3>
+<p>Entropy term encourages solution diversity:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{objectives}} - \lambda T S_{\text{diversity}}\)</span>\)</span></p>
+<h2 id="constrained-thermodynamic-optimization">Constrained Thermodynamic Optimization<a class="headerlink" href="#constrained-thermodynamic-optimization" title="Permanent link">&para;</a></h2>
+<h3 id="lagrangian-thermodynamics">Lagrangian Thermodynamics<a class="headerlink" href="#lagrangian-thermodynamics" title="Permanent link">&para;</a></h3>
+<p>Include constraints via Lagrange multipliers:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{L} = U(\theta) - TS(\theta) + \sum_i \lambda_i g_i(\theta)\)</span>\)</span></p>
+<h3 id="penalty-methods">Penalty Methods<a class="headerlink" href="#penalty-methods" title="Permanent link">&para;</a></h3>
+<p>Soft constraints with temperature-dependent penalties:
+<span class="arithmatex">\(<span class="arithmatex">\(U_{\text{penalty}} = U(\theta) + \frac{1}{T} \sum_i c_i [g_i(\theta)]^2\)</span>\)</span></p>
+<h3 id="barrier-methods">Barrier Methods<a class="headerlink" href="#barrier-methods" title="Permanent link">&para;</a></h3>
+<p>Logarithmic barriers for inequality constraints:
+<span class="arithmatex">\(<span class="arithmatex">\(U_{\text{barrier}} = U(\theta) - T \sum_i \log(-g_i(\theta))\)</span>\)</span></p>
+<h2 id="advanced-techniques">Advanced Techniques<a class="headerlink" href="#advanced-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="thermodynamic-neural-architecture-search">Thermodynamic Neural Architecture Search<a class="headerlink" href="#thermodynamic-neural-architecture-search" title="Permanent link">&para;</a></h3>
+<p>Use temperature to control architecture exploration:
+- High <span class="arithmatex">\(T\)</span>: Explore diverse architectures
+- Low <span class="arithmatex">\(T\)</span>: Refine promising architectures</p>
+<h3 id="continual-learning">Continual Learning<a class="headerlink" href="#continual-learning" title="Permanent link">&para;</a></h3>
+<p>Temperature modulation for plasticity-stability balance:
+- High <span class="arithmatex">\(T\)</span>: Learn new tasks (plasticity)
+- Low <span class="arithmatex">\(T\)</span>: Preserve old knowledge (stability)</p>
+<h3 id="meta-learning">Meta-Learning<a class="headerlink" href="#meta-learning" title="Permanent link">&para;</a></h3>
+<p>Learn temperature schedules for different problem classes:
+<span class="arithmatex">\(<span class="arithmatex">\(T^*(t) = \text{MetaNet}(\text{problem\_features}, t)\)</span>\)</span></p>
+<h2 id="convergence-analysis">Convergence Analysis<a class="headerlink" href="#convergence-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="convergence-conditions">Convergence Conditions<a class="headerlink" href="#convergence-conditions" title="Permanent link">&para;</a></h3>
+<p>For Langevin dynamics:
+<span class="arithmatex">\(<span class="arithmatex">\(\lim_{t \to \infty} p(\theta, t) = p_{\text{eq}}(\theta) \propto e^{-U(\theta)/(k_B T)}\)</span>\)</span></p>
+<h3 id="convergence-rate">Convergence Rate<a class="headerlink" href="#convergence-rate" title="Permanent link">&para;</a></h3>
+<p>Exponential convergence with rate:
+<span class="arithmatex">\(<span class="arithmatex">\(\lambda = \min_{\text{eigenvalue}} \left(-\frac{\partial^2 U}{\partial \theta^2}\right)\)</span>\)</span></p>
+<h3 id="mixing-time">Mixing Time<a class="headerlink" href="#mixing-time" title="Permanent link">&para;</a></h3>
+<p>Time to reach near-equilibrium:
+<span class="arithmatex">\(<span class="arithmatex">\(\tau_{\text{mix}} \approx \frac{1}{\lambda}\)</span>\)</span></p>
+<h2 id="implementation-considerations">Implementation Considerations<a class="headerlink" href="#implementation-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="numerical-stability">Numerical Stability<a class="headerlink" href="#numerical-stability" title="Permanent link">&para;</a></h3>
+<p>Prevent temperature from becoming too small:
+<span class="arithmatex">\(<span class="arithmatex">\(T_{\min} \leq T(t) \leq T_{\max}\)</span>\)</span></p>
+<h3 id="computational-efficiency">Computational Efficiency<a class="headerlink" href="#computational-efficiency" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Vectorized operations</li>
+<li>Efficient noise generation</li>
+<li>Parallel replica updates</li>
+</ul>
+<h3 id="memory-management">Memory Management<a class="headerlink" href="#memory-management" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gradient checkpointing for long trajectories</li>
+<li>Efficient storage of multiple replicas</li>
+</ul>
+<h2 id="validation-and-testing">Validation and Testing<a class="headerlink" href="#validation-and-testing" title="Permanent link">&para;</a></h2>
+<h3 id="detailed-balance">Detailed Balance<a class="headerlink" href="#detailed-balance" title="Permanent link">&para;</a></h3>
+<p>Verify microscopic reversibility:
+<span class="arithmatex">\(<span class="arithmatex">\(P(A \to B) p_{\text{eq}}(A) = P(B \to A) p_{\text{eq}}(B)\)</span>\)</span></p>
+<h3 id="ergodicity">Ergodicity<a class="headerlink" href="#ergodicity" title="Permanent link">&para;</a></h3>
+<p>Ensure all states are accessible.</p>
+<h3 id="energy-conservation">Energy Conservation<a class="headerlink" href="#energy-conservation" title="Permanent link">&para;</a></h3>
+<p>For Hamiltonian methods, verify energy conservation in continuous limit.</p>
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h3 id="neural-network-training">Neural Network Training<a class="headerlink" href="#neural-network-training" title="Permanent link">&para;</a></h3>
+<p>Thermodynamic optimizers for robust training with good generalization.</p>
+<h3 id="hyperparameter-optimization">Hyperparameter Optimization<a class="headerlink" href="#hyperparameter-optimization" title="Permanent link">&para;</a></h3>
+<p>Use temperature to balance exploration and exploitation in hyperparameter space.</p>
+<h3 id="reinforcement-learning">Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h3>
+<p>Thermodynamic policy optimization with natural exploration.</p>
+<h3 id="generative-models">Generative Models<a class="headerlink" href="#generative-models" title="Permanent link">&para;</a></h3>
+<p>Training of thermodynamic generative models.</p>
+<h2 id="comparison-with-traditional-methods">Comparison with Traditional Methods<a class="headerlink" href="#comparison-with-traditional-methods" title="Permanent link">&para;</a></h2>
+<h3 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Natural exploration-exploitation balance</li>
+<li>Robust to local minima</li>
+<li>Physically motivated</li>
+<li>Good generalization properties</li>
+</ul>
+<h3 id="disadvantages">Disadvantages<a class="headerlink" href="#disadvantages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Computational overhead from thermal terms</li>
+<li>Additional hyperparameters (temperature schedules)</li>
+<li>May require longer convergence times</li>
+</ul>
+<h2 id="future-directions">Future Directions<a class="headerlink" href="#future-directions" title="Permanent link">&para;</a></h2>
+<h3 id="quantum-thermodynamic-optimizers">Quantum Thermodynamic Optimizers<a class="headerlink" href="#quantum-thermodynamic-optimizers" title="Permanent link">&para;</a></h3>
+<p>Extension to quantum parameter spaces.</p>
+<h3 id="non-equilibrium-optimization">Non-Equilibrium Optimization<a class="headerlink" href="#non-equilibrium-optimization" title="Permanent link">&para;</a></h3>
+<p>Driven systems with energy input.</p>
+<h3 id="adaptive-temperature-networks">Adaptive Temperature Networks<a class="headerlink" href="#adaptive-temperature-networks" title="Permanent link">&para;</a></h3>
+<p>Learning optimal temperature schedules.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Thermodynamic optimizers provide a principled approach to optimization that naturally incorporates exploration through thermal fluctuations. By balancing energy minimization with entropy maximization, these methods can find robust solutions while avoiding common pitfalls like local minima and overfitting.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/krish567366/Entropic-AI" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/eai/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
