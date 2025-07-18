@@ -21,6 +21,8 @@ Welcome to the Entropic AI project! We're excited to have you contribute to the 
 - Basic understanding of thermodynamics and optimization
 - Familiarity with PyTorch and NumPy
 
+> **Note**: The package is published on PyPI as `entropic-ai` but imported in Python as `eai`. This is intentional - install with `pip install entropic-ai` but use `import eai` in your code.
+
 ### Development Environment Setup
 
 1. **Fork and Clone Repository**
@@ -98,6 +100,7 @@ We follow conventional commits:
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -128,7 +131,7 @@ test(optimization): add unit tests for complexity measures
 
 ### Test Structure
 
-```
+```bash
 tests/
 ├── unit/                 # Unit tests for individual components
 │   ├── core/            # Core module tests
