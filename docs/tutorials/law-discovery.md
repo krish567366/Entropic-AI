@@ -18,10 +18,10 @@ import numpy as np
 import pandas as pd
 import sympy as sp
 from sklearn.metrics import r2_score, mean_squared_error
-from eai.core import ThermodynamicNetwork, ComplexityOptimizer
-from eai.applications import LawDiscovery
-from eai.symbolic import SymbolicExpression, OperatorLibrary
-from eai.optimization import ParsimonyCriterion
+from entropic-ai.core import ThermodynamicNetwork, ComplexityOptimizer
+from entropic-ai.applications import LawDiscovery
+from entropic-ai.symbolic import SymbolicExpression, OperatorLibrary
+from entropic-ai.optimization import ParsimonyCriterion
 ```
 
 ## Basic Law Discovery

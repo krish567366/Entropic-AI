@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "eai"
-dynamic = ["version", "readme"]
+name = "entropic-ai"
+dynamic = ["version"]
 description = "Entropic AI: Generative Intelligence through Thermodynamic Self-Organization (Patent Pending)"
 readme = "README.md"
 license = {text = "Proprietary"}
@@ -20,7 +20,7 @@ keywords = [
     "entropy", 
     "complex-systems", 
     "emergent-intelligence",
-    "generative-ai",
+    "generativeai",
     "physics-based-ai",
     "self-organization"
 ]

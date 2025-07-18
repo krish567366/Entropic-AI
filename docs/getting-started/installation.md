@@ -9,7 +9,7 @@ This guide covers everything you need to install and set up Entropic AI on your 
 The easiest way to install Entropic AI is through PyPI:
 
 ```bash
-pip install eai
+pip install entropic-ai
 ```
 
 ### With Optional Dependencies
@@ -18,16 +18,16 @@ For enhanced functionality, install with optional dependencies:
 
 ```bash
 # For GPU acceleration
-pip install eai[gpu]
+pip install entropic-ai[gpu]
 
 # For molecular applications
-pip install eai[molecules]
+pip install entropic-ai[molecules]
 
 # For circuit design
-pip install eai[circuits]
+pip install entropic-ai[circuits]
 
 # For all features
-pip install eai[full]
+pip install entropic-ai[full]
 ```
 
 ## Prerequisites
@@ -55,14 +55,14 @@ We strongly recommend using a virtual environment:
 
 ```bash
 # Using conda (recommended)
-conda create -n eai python=3.10
-conda activate eai
+conda create -n entropic-ai python=3.10
+conda activate entropic-ai
 
 # Using venv
-python -m venv eai-env
-source eai-env/bin/activate  # Linux/Mac
+python -m venv entropic-ai-env
+source entropic-ai-env/bin/activate  # Linux/Mac
 # or
-eai-env\Scripts\activate     # Windows
+entropic-ai-env\Scripts\activate     # Windows
 ```
 
 ## Installation Methods
@@ -72,13 +72,13 @@ eai-env\Scripts\activate     # Windows
 Install the latest stable release:
 
 ```bash
-pip install eai
+pip install entropic-ai
 ```
 
 Verify installation:
 
 ```bash
-python -c "import eai; print(eai.__version__)"
+python -c "import entropic-ai; print(entropic-ai.__version__)"
 ```
 
 ### Method 2: Development Installation
@@ -177,7 +177,7 @@ pip install sympy numba cupy-cuda118
 2. **Install Entropic AI:**
 
    ```cmd
-   pip install eai
+   pip install entropic-ai
    ```
 
 3. **For GPU support:**
@@ -198,7 +198,7 @@ pip install sympy numba cupy-cuda118
 
    ```bash
    brew install python@3.10
-   pip3.10 install eai
+   pip3.10 install entropic-ai
    ```
 
 3. **For M1/M2 Macs:**
@@ -220,7 +220,7 @@ pip install sympy numba cupy-cuda118
 2. **Install Entropic AI:**
 
    ```bash
-   pip3 install eai
+   pip3 install entropic-ai
    ```
 
 3. **For GPU support:**
@@ -242,7 +242,7 @@ pip install sympy numba cupy-cuda118
 2. **Install Entropic AI:**
 
    ```bash
-   pip3 install eai
+   pip3 install entropic-ai
    ```
 
 ## Configuration
@@ -253,19 +253,19 @@ Set up environment variables for optimal performance:
 
 ```bash
 # Bash/Zsh
-export EAI_CACHE_DIR="$HOME/.eai/cache"
-export EAI_DATA_DIR="$HOME/.eai/data"
-export EAI_NUM_THREADS="8"
+export entropic-ai_CACHE_DIR="$HOME/.entropic-ai/cache"
+export entropic-ai_DATA_DIR="$HOME/.entropic-ai/data"
+export entropic-ai_NUM_THREADS="8"
 
 # Windows CMD
-set EAI_CACHE_DIR=%USERPROFILE%\.eai\cache
-set EAI_DATA_DIR=%USERPROFILE%\.eai\data
-set EAI_NUM_THREADS=8
+set entropic-ai_CACHE_DIR=%USERPROFILE%\.entropic-ai\cache
+set entropic-ai_DATA_DIR=%USERPROFILE%\.entropic-ai\data
+set entropic-ai_NUM_THREADS=8
 ```
 
 ### Configuration File
 
-Create a configuration file at `~/.eai/config.yaml`:
+Create a configuration file at `~/.entropic-ai/config.yaml`:
 
 ```yaml
 # Entropic AI Configuration
@@ -298,11 +298,11 @@ applications:
 ### Basic Installation Test
 
 ```python
-import eai
-from eai import EntropicNetwork, GenerativeDiffuser
+import entropic-ai
+from entropic-ai import EntropicNetwork, GenerativeDiffuser
 import torch
 
-print(f"Entropic AI version: {eai.__version__}")
+print(f"Entropic AI version: {entropic-ai.__version__}")
 
 # Create a simple network
 network = EntropicNetwork(nodes=32)
@@ -318,7 +318,7 @@ print("✅ Basic installation test passed!")
 ### Performance Benchmark
 
 ```python
-from eai.benchmarks import installation_benchmark
+from entropic-ai.benchmarks import installation_benchmark
 
 # Run installation benchmark
 results = installation_benchmark()
@@ -331,17 +331,17 @@ print(f"All tests passed: {results.all_passed}")
 
 ```python
 # Test molecular evolution
-from eai.applications import MoleculeEvolution
+from entropic-ai.applications import MoleculeEvolution
 mol_evolver = MoleculeEvolution()
 print("✅ Molecular evolution available")
 
 # Test circuit design
-from eai.applications import CircuitEvolution
+from entropic-ai.applications import CircuitEvolution
 circuit_evolver = CircuitEvolution()
 print("✅ Circuit evolution available")
 
 # Test theory discovery
-from eai.applications import TheoryDiscovery
+from entropic-ai.applications import TheoryDiscovery
 theory_evolver = TheoryDiscovery()
 print("✅ Theory discovery available")
 ```
@@ -350,10 +350,10 @@ print("✅ Theory discovery available")
 
 ### Common Issues
 
-#### **ImportError: No module named 'eai'**
+#### **ImportError: No module named 'entropic-ai'**
 
 - Solution: Ensure you're in the correct virtual environment
-- Check: `pip list | grep eai`
+- Check: `pip list | grep entropic-ai`
 
 #### **CUDA out of memory**
 
@@ -368,7 +368,7 @@ print("✅ Theory discovery available")
 #### **Permission denied errors**
 
 - Solution: Use virtual environment or `--user` flag
-- Command: `pip install --user eai`
+- Command: `pip install --user entropic-ai`
 
 ### Getting Help
 
@@ -383,8 +383,8 @@ If you encounter issues:
 To report issues, include system information:
 
 ```python
-import eai
-eai.print_system_info()
+import entropic-ai
+entropic-ai.print_system_info()
 ```
 
 This will output:
@@ -411,8 +411,8 @@ After installation, check out:
 Check for updates regularly:
 
 ```bash
-pip list --outdated | grep eai
-pip install --upgrade eai
+pip list --outdated | grep entropic-ai
+pip install --upgrade entropic-ai
 ```
 
 ### Beta Releases
@@ -420,7 +420,7 @@ pip install --upgrade eai
 To try beta features:
 
 ```bash
-pip install --pre eai
+pip install --pre entropic-ai
 ```
 
 ### Development Snapshots
@@ -436,11 +436,11 @@ pip install git+https://github.com/krish567366/Entropic-AI.git
 To remove Entropic AI:
 
 ```bash
-pip uninstall eai
+pip uninstall entropic-ai
 
 # Remove cache and data directories
-rm -rf ~/.eai/  # Linux/Mac
-rmdir /s %USERPROFILE%\.eai  # Windows
+rm -rf ~/.entropic-ai/  # Linux/Mac
+rmdir /s %USERPROFILE%\.entropic-ai  # Windows
 ```
 
 Welcome to the world of thermodynamic intelligence! 🌌

@@ -55,8 +55,8 @@ pre-commit install
 pytest tests/
 
 # Check code style
-flake8 eai/
-black --check eai/
+flake8 entropic-ai/
+black --check entropic-ai/
 
 # Build documentation locally
 cd docs/
@@ -145,7 +145,7 @@ tests/
 # Example unit test
 import pytest
 import torch
-from eai.core import ThermodynamicNetwork
+from entropic-ai.core import ThermodynamicNetwork
 
 class TestThermodynamicNetwork:
     """Test thermodynamic network functionality."""
@@ -206,7 +206,7 @@ pytest
 pytest tests/unit/core/test_thermodynamic_network.py
 
 # Run with coverage
-pytest --cov=eai --cov-report=html
+pytest --cov=entropic-ai --cov-report=html
 
 # Run performance benchmarks
 pytest tests/benchmarks/ --benchmark-only
@@ -315,16 +315,16 @@ We use Black for code formatting and Flake8 for linting:
 
 ```bash
 # Format code with Black
-black eai/ tests/
+black entropic-ai/ tests/
 
 # Check formatting
-black --check eai/ tests/
+black --check entropic-ai/ tests/
 
 # Lint with Flake8
-flake8 eai/ tests/
+flake8 entropic-ai/ tests/
 
 # Type checking with mypy
-mypy eai/
+mypy entropic-ai/
 ```
 
 ### Code Organization
@@ -341,8 +341,8 @@ import torch
 import torch.nn as nn
 
 # Local imports
-from eai.core.base import BaseThermodynamicSystem
-from eai.utilities.math import compute_entropy
+from entropic-ai.core.base import BaseThermodynamicSystem
+from entropic-ai.utilities.math import compute_entropy
 ```
 
 ### Performance Guidelines

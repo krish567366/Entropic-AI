@@ -1,10 +1,10 @@
-# 🌌 Entropic AI (E-AI)
+# 🌌 Entropic AI (entropic-ai)
 
 ## **Physics-Native Intelligence: The First Thermo-Computational Cognition System**
 
-### *"E-AI doesn't just learn from data. It evolves meaning through entropy."*
+### *"entropic-ai doesn't just learn from data. It evolves meaning through entropy."*
 
-[![EAI Certified](https://img.shields.io/badge/EAI-Certified-brightgreen?logo=ai)](https://your-link.com)
+[![entropic-ai Certified](https://img.shields.io/badge/entropic--ai-Certified-brightgreen?logo=ai)](https://your-link.com)
 [![Quantum Ready](https://img.shields.io/badge/Quantum-Ready-important?logo=quantconnect)](https://your-link.com)
 [![Hybrid Architecture](https://img.shields.io/badge/Hybrid-Quantum‒Classical-blue?logo=cloud)](https://your-link.com)
 [![Enterprise Grade](https://img.shields.io/badge/Enterprise-Grade-critical?logo=apachespark)](https://your-link.com)
@@ -18,7 +18,7 @@
 
 ---
 
-## 🆚 Revolutionary Paradigm: Why E-AI is Different
+## 🆚 Revolutionary Paradigm: Why entropic-ai is Different
 
 ### Traditional AI: Loss Optimization
 
@@ -81,18 +81,18 @@
 ### Quick Start (License Required)
 
 ```bash
-# 1. Install E-AI
+# 1. Install entropic-ai
 pip install entropic-ai
 
 # 2. Obtain license from bajpaikrishna715@gmail.com
 
 # 3. Activate license
-eai-license activate your_license.json
+entropic-ai-license activate your_license.json
 
 # 4. Verify license
-eai-license status
+entropic-ai-license status
 
-# 5. Start using E-AI
+# 5. Start using entropic-ai
 python -c "import eai; print('Ready for physics-native intelligence!')"
 ```
 
@@ -116,7 +116,7 @@ Entropic AI takes **chaotic, structureless inputs** (noise, random atoms, abstra
 ### Installation
 
 ```bash
-pip install eai
+pip install entropic-ai
 ```
 
 ### Basic Usage
@@ -202,8 +202,8 @@ Each node is a thermodynamic unit with:
 
 ### Performance Benchmarks vs Traditional AI
 
-| Task Category | Traditional AI Method | E-AI Performance | Improvement |
-|---------------|----------------------|------------------|-------------|
+| Task Category | Traditional AI Method | entropic-ai Performance | Improvement |
+|---------------|----------------------|--------------------------|-------------|
 | **Novel Molecule Design** | VAE-based generation | 3.2× higher stability scores | **220% better** |
 | **Circuit Optimization** | Genetic algorithms | 47% more efficient designs | **47% improvement** |
 | **Symbolic Discovery** | Neural symbolic regression | 5× more novel relationships | **400% better** |
@@ -211,7 +211,7 @@ Each node is a thermodynamic unit with:
 | **Open-Domain QA** | BERT/GPT variants | 23% better on unseen types | **23% improvement** |
 | **Real-Time Adaptation** | Transfer learning | Maintains 95% performance under 40% distribution shift | **Robust adaptation** |
 
-### Why E-AI Outperforms Traditional Methods
+### Why entropic-ai Outperforms Traditional Methods
 
 - **🌪️ Chaos-to-Order Evolution**: Starts from pure randomness, discovers solutions
 - **🧬 Emergent Complexity**: Creates novel structures not in training data  
@@ -330,7 +330,7 @@ For complete patent information, see [Patent Documentation](https://krish567366.
 
 - **GitHub Repository**: [https://github.com/krish567366/Entropic-AI](https://github.com/krish567366/Entropic-AI)
 - **Documentation**: [https://krish567366.github.io/Entropic-AI/](https://krish567366.github.io/Entropic-AI/)
-- **PyPI Package**: [https://pypi.org/project/eai/](https://pypi.org/project/eai/)
+- **PyPI Package**: [https://pypi.org/project/entropic-ai/](https://pypi.org/project/entropic-ai/)
 - **Issues & Bug Reports**: [https://github.com/krish567366/Entropic-AI/issues](https://github.com/krish567366/Entropic-AI/issues)
 
 ---
@@ -355,4 +355,4 @@ Contact [bajpaikrishna715@gmail.com](mailto:bajpaikrishna715@gmail.com) for comm
 
 ---
 
-*"In the dance between order and chaos, intelligence emerges not through instruction, but through the inexorable pull of thermodynamic truth."* — E-AI Philosophy
+*"In the dance between order and chaos, intelligence emerges not through instruction, but through the inexorable pull of thermodynamic truth."* — entropic-ai Philosophy

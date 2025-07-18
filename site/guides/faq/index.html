@@ -2638,13 +2638,13 @@
 </ul>
 <h3 id="how-do-i-install-entropic-ai">How do I install Entropic AI?<a class="headerlink" href="#how-do-i-install-entropic-ai" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Basic installation</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>eai
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>entropic-ai
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># With GPU support</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>eai<span class="o">[</span>gpu<span class="o">]</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>entropic-ai<span class="o">[</span>gpu<span class="o">]</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Full installation with all optional dependencies</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>pip<span class="w"> </span>install<span class="w"> </span>eai<span class="o">[</span>full<span class="o">]</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>pip<span class="w"> </span>install<span class="w"> </span>entropic-ai<span class="o">[</span>full<span class="o">]</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Development installation</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/krish567366/Entropic-AI.git
@@ -2739,7 +2739,7 @@
 </span></code></pre></div>
 <h2 id="application-specific-questions">Application-Specific Questions<a class="headerlink" href="#application-specific-questions" title="Permanent link">&para;</a></h2>
 <h3 id="how-do-i-design-molecules-with-specific-properties">How do I design molecules with specific properties?<a class="headerlink" href="#how-do-i-design-molecules-with-specific-properties" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeEvolution</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">applications</span> <span class="kn">import</span><span class="w"> </span><span class="nn">MoleculeEvolution</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Define target properties precisely</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">evolver</span> <span class="o">=</span> <span class="n">MoleculeEvolution</span><span class="p">(</span>
@@ -2760,7 +2760,7 @@
 </span></code></pre></div>
 <h3 id="can-i-use-entropic-ai-for-time-series-prediction">Can I use Entropic AI for time series prediction?<a class="headerlink" href="#can-i-use-entropic-ai-for-time-series-prediction" title="Permanent link">&para;</a></h3>
 <p>Yes, but it's designed for structural discovery rather than prediction:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimeSeriesEvolution</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">applications</span> <span class="kn">import</span><span class="w"> </span><span class="nn">TimeSeriesEvolution</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Discover underlying dynamical system</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">discoverer</span> <span class="o">=</span> <span class="n">TimeSeriesEvolution</span><span class="p">(</span>
@@ -2800,7 +2800,7 @@
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">network</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 </span></code></pre></div>
 <p><strong>2. Parallel evolution:</strong></p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParallelEvolver</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">utils</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ParallelEvolver</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">parallel_evolver</span> <span class="o">=</span> <span class="n">ParallelEvolver</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">results</span> <span class="o">=</span> <span class="n">parallel_evolver</span><span class="o">.</span><span class="n">evolve_batch</span><span class="p">(</span><span class="n">initial_states</span><span class="p">)</span>
@@ -2854,7 +2854,7 @@
 </span></code></pre></div>
 <h3 id="can-i-run-entropic-ai-on-multiple-gpus">Can I run Entropic AI on multiple GPUs?<a class="headerlink" href="#can-i-run-entropic-ai-on-multiple-gpus" title="Permanent link">&para;</a></h3>
 <p>Yes, for large problems:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.distributed</span><span class="w"> </span><span class="kn">import</span> <span class="n">DistributedEvolver</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">distributed</span> <span class="kn">import</span><span class="w"> </span><span class="nn">DistributedEvolver</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1"># Multi-GPU evolution</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">evolver</span> <span class="o">=</span> <span class="n">DistributedEvolver</span><span class="p">(</span>
@@ -2871,7 +2871,7 @@
 <h3 id="how-do-i-integrate-entropic-ai-with-existing-workflows">How do I integrate Entropic AI with existing workflows?<a class="headerlink" href="#how-do-i-integrate-entropic-ai-with-existing-workflows" title="Permanent link">&para;</a></h3>
 <p><strong>Python integration:</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Use as a library</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai</span><span class="w"> </span><span class="kn">import</span> <span class="n">EntropicNetwork</span><span class="p">,</span> <span class="n">GenerativeDiffuser</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span> <span class="kn">import</span><span class="w"> </span><span class="nn">EntropicNetwork</span><span class="o">,</span><span class="w"> </span><span class="nn">GenerativeDiffuser</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
 </span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_optimization_function</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 </span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="c1"># Your existing code</span>
@@ -2892,7 +2892,7 @@
 </span></code></pre></div>
 <p><strong>REST API integration:</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Start Entropic AI server</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.server</span><span class="w"> </span><span class="kn">import</span> <span class="n">EntropyServer</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">server</span> <span class="kn">import</span><span class="w"> </span><span class="nn">EntropyServer</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">server</span> <span class="o">=</span> <span class="n">EntropyServer</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
 </span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
@@ -2965,7 +2965,7 @@
 <p><strong>4. Report bugs:</strong></p>
 <p>Include this information:</p>
 <ul>
-<li>Entropic AI version: <code>eai.__version__</code></li>
+<li>Entropic AI version: <code>entropic-ai.__version__</code></li>
 <li>Python version</li>
 <li>Operating system</li>
 <li>Minimal reproducible example</li>
@@ -2973,15 +2973,15 @@
 </ul>
 <h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
 <p>Enable debug mode for detailed information:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">eai</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">eai</span><span class="o">.</span><span class="n">set_debug_mode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">set_debug_mode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Now all operations will provide detailed logging</span>
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="n">result</span> <span class="o">=</span> <span class="n">diffuser</span><span class="o">.</span><span class="n">evolve</span><span class="p">(</span><span class="n">chaos</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="performance-profiling">Performance Profiling<a class="headerlink" href="#performance-profiling" title="Permanent link">&para;</a></h3>
 <p>Profile your code to identify bottlenecks:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">profile_evolution</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">utils</span> <span class="kn">import</span><span class="w"> </span><span class="nn">profile_evolution</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1"># Profile evolution process</span>
 </span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="n">profiler</span> <span class="o">=</span> <span class="n">profile_evolution</span><span class="p">(</span>

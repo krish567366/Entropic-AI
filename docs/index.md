@@ -2,7 +2,7 @@
 
 **Create Order from Chaos — Evolve Intelligence like Nature**
 
-Welcome to Entropic AI (E-AI), the world's first generative intelligence system fundamentally based on **thermodynamics**, **entropy**, and **emergent order**. Unlike traditional AI that interpolates within latent spaces, E-AI is a **self-organizing thermodynamic system** that evolves solutions by minimizing free energy and maximizing emergent complexity.
+Welcome to Entropic AI (entropic-ai), the world's first generative intelligence system fundamentally based on **thermodynamics**, **entropy**, and **emergent order**. Unlike traditional AI that interpolates within latent spaces, entropic-ai is a **self-organizing thermodynamic system** that evolves solutions by minimizing free energy and maximizing emergent complexity.
 
 ## The Revolutionary Principle
 
@@ -31,13 +31,13 @@ graph TD
 ### Installation
 
 ```bash
-pip install eai
+pip install entropic-ai
 ```
 
 ### Basic Usage
 
 ```python
-from eai import EntropicNetwork, ComplexityOptimizer, GenerativeDiffuser
+from entropic-ai import EntropicNetwork, ComplexityOptimizer, GenerativeDiffuser
 
 # Create a thermodynamic neural network
 network = EntropicNetwork(
@@ -72,7 +72,7 @@ order = diffuser.evolve(chaos)  # Emergent structure
 Generate stable molecular folds with emergent function:
 
 ```python
-from eai.applications import MoleculeEvolution
+from entropic-ai.applications import MoleculeEvolution
 
 evolver = MoleculeEvolution(
     target_properties={"stability": 0.9, "complexity": 0.7}
@@ -85,7 +85,7 @@ molecule = evolver.evolve_from_atoms(elements=["C", "N", "O", "H"])
 Design thermodynamically optimal logic under noise:
 
 ```python
-from eai.applications import CircuitEvolution
+from entropic-ai.applications import CircuitEvolution
 
 designer = CircuitEvolution(
     logic_gates=["AND", "OR", "NOT", "XOR"],
@@ -99,7 +99,7 @@ circuit = designer.evolve_logic(truth_table=target_function)
 Find stable symbolic expressions that model noisy data:
 
 ```python
-from eai.applications import TheoryDiscovery
+from entropic-ai.applications import TheoryDiscovery
 
 discoverer = TheoryDiscovery(
     domain="physics",
@@ -211,7 +211,7 @@ Unlike traditional AI approaches, Entropic AI:
 ## Community and Support
 
 - **GitHub**: [krish567366/Entropic-AI](https://github.com/krish567366/Entropic-AI)
-- **PyPI**: [eai](https://pypi.org/project/eai/)
+- **PyPI**: [entropic-ai](https://pypi.org/project/entropic-ai/)
 - **Issues**: [Bug Reports & Feature Requests](https://github.com/krish567366/Entropic-AI/issues)
 - **Discussions**: [Community Forum](https://github.com/krish567366/Entropic-AI/discussions)
 
@@ -238,4 +238,4 @@ For licensing inquiries, please contact: [bajpaikrishna715@gmail.com](mailto:baj
 
 ---
 
-*"In the dance between order and chaos, intelligence emerges not through instruction, but through the inexorable pull of thermodynamic truth."* — E-AI Philosophy
+*"In the dance between order and chaos, intelligence emerges not through instruction, but through the inexorable pull of thermodynamic truth."* — entropic-ai Philosophy

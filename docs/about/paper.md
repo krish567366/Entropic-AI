@@ -9,7 +9,7 @@ GitHub: [@krish567366](https://github.com/krish567366)
 
 ## Abstract
 
-We present **Entropic AI (E-AI)**, a revolutionary computational paradigm that replaces traditional loss optimization with **entropy minimization** through fundamental thermodynamic principles. Unlike conventional artificial intelligence systems that interpolate within learned distributions, E-AI operates as a **physics-native intelligence** that evolves solutions through generative diffusion of order—transforming chaotic initial states into highly complex, stable structures via free energy minimization (ΔF = ΔU − TΔS). Our approach demonstrates **thermo-computational cognition**, where intelligent behavior emerges through the same thermodynamic laws that govern protein folding, crystal formation, and cosmic structure evolution. Experimental validation shows E-AI achieves **3.2× higher stability scores** in novel molecule design, **47% more efficient** circuit architectures, and **5× more novel mathematical relationships** in symbolic discovery compared to state-of-the-art methods. This work establishes the theoretical foundation for **physics-native intelligence** and demonstrates practical applications across drug discovery, circuit evolution, and cognitive architecture domains.
+We present **Entropic AI (entropic-ai)**, a revolutionary computational paradigm that replaces traditional loss optimization with **entropy minimization** through fundamental thermodynamic principles. Unlike conventional artificial intelligence systems that interpolate within learned distributions, entropic-ai operates as a **physics-native intelligence** that evolves solutions through generative diffusion of order—transforming chaotic initial states into highly complex, stable structures via free energy minimization (ΔF = ΔU − TΔS). Our approach demonstrates **thermo-computational cognition**, where intelligent behavior emerges through the same thermodynamic laws that govern protein folding, crystal formation, and cosmic structure evolution. Experimental validation shows entropic-ai achieves **3.2× higher stability scores** in novel molecule design, **47% more efficient** circuit architectures, and **5× more novel mathematical relationships** in symbolic discovery compared to state-of-the-art methods. This work establishes the theoretical foundation for **physics-native intelligence** and demonstrates practical applications across drug discovery, circuit evolution, and cognitive architecture domains.
 
 **Keywords:** Thermodynamic Computing, Entropy Minimization, Physics-Native Intelligence, Generative Diffusion, Emergent Complexity, Free Energy Principle
 
@@ -45,7 +45,7 @@ graph TB
 
 Traditional artificial intelligence operates through **loss minimization**, using gradient descent to interpolate within training distributions. This approach, while successful in many domains, fundamentally limits AI systems to **recombination** of existing patterns rather than **true emergence** of novel solutions. In contrast, natural intelligence—from protein folding to neuronal organization—operates through **thermodynamic self-organization**, where complex structures spontaneously emerge through entropy minimization and free energy reduction.
 
-**Entropic AI (E-AI)** represents a fundamental departure from this optimization paradigm, instead implementing **physics-native intelligence** based on thermodynamic principles. Rather than learning from data, E-AI **evolves meaning** through the same physical laws that govern the universe's tendency toward increasing complexity and decreasing entropy in open systems.
+**Entropic AI (entropic-ai)** represents a fundamental departure from this optimization paradigm, instead implementing **physics-native intelligence** based on thermodynamic principles. Rather than learning from data, entropic-ai **evolves meaning** through the same physical laws that govern the universe's tendency toward increasing complexity and decreasing entropy in open systems.
 
 ### 1.2 Theoretical Foundation: Thermo-Computational Cognition
 
@@ -76,7 +76,7 @@ flowchart LR
     style B fill:#ffff99
 ```
 
-The core principle underlying E-AI is the **Free Energy Principle** from statistical mechanics:
+The core principle underlying entropic-ai is the **Free Energy Principle** from statistical mechanics:
 
 ```maths
 ΔF = ΔU − TΔS
@@ -114,7 +114,7 @@ mindmap
       Self-Reconfiguration
 ```
 
-E-AI introduces several revolutionary concepts:
+entropic-ai introduces several revolutionary concepts:
 
 1. **Generative Diffusion of Order**: Transformation of chaotic inputs into structured outputs through thermodynamic evolution
 2. **Complexity-Maximizing Optimization**: Systems that seek optimal complexity rather than minimal error
@@ -148,7 +148,7 @@ However, these methods still operate within the optimization paradigm and do not
 
 ### 2.3 Free Energy Principle in Neuroscience
 
-Recent neuroscience research has identified the **Free Energy Principle** as a unifying theory of brain function [Friston, 2010]. E-AI extends this biological insight to artificial systems, creating the first computational implementation of truly **thermodynamic intelligence**.
+Recent neuroscience research has identified the **Free Energy Principle** as a unifying theory of brain function [Friston, 2010]. entropic-ai extends this biological insight to artificial systems, creating the first computational implementation of truly **thermodynamic intelligence**.
 
 ---
 
@@ -185,7 +185,7 @@ graph TD
     style K fill:#ffffcc
 ```
 
-E-AI networks consist of **thermodynamic units** rather than traditional neurons:
+entropic-ai networks consist of **thermodynamic units** rather than traditional neurons:
 
 ```python
 class ThermodynamicUnit:
@@ -233,7 +233,7 @@ flowchart TD
     style C fill:#99ff99
 ```
 
-The core E-AI algorithm implements **generative diffusion of order**:
+The core entropic-ai algorithm implements **generative diffusion of order**:
 
 #### **Phase 1: Chaos Initialization**
 
@@ -315,7 +315,7 @@ graph TB
     style J fill:#lightpink
 ```
 
-Unlike traditional AI that minimizes prediction error, E-AI optimizes for **emergent complexity**:
+Unlike traditional AI that minimizes prediction error, entropic-ai optimizes for **emergent complexity**:
 
 ```python
 def complexity_score(state):
@@ -370,7 +370,7 @@ graph TB
     style D fill:#9999ff
 ```
 
-E-AI implements **hierarchical thermodynamic organization**:
+entropic-ai implements **hierarchical thermodynamic organization**:
 
 ```plaintext
 Macro Scale:   Global system thermodynamics
@@ -390,7 +390,7 @@ This enables **emergent behavior** at multiple organizational levels, similar to
 ```mermaid
 graph TB
     subgraph "Molecule Evolution Experiment"
-        A[Input: Atomic Elements] --> B[E-AI Thermodynamic Evolution]
+        A[Input: Atomic Elements] --> B[entropic-ai Thermodynamic Evolution]
         B --> C[Generated Molecules]
         
         A1[C, N, O, H] --> A
@@ -424,12 +424,12 @@ graph TB
 ```mermaid
 xychart-beta
     title "Molecule Design Performance Comparison"
-    x-axis [VAE, E-AI]
+    x-axis [VAE, entropic-ai]
     y-axis "Stability Score" 0 --> 1
     bar [0.28, 0.91]
 ```
 
-- E-AI: **3.2× higher stability scores** (0.91 ± 0.05 vs 0.28 ± 0.12)
+- entropic-ai: **3.2× higher stability scores** (0.91 ± 0.05 vs 0.28 ± 0.12)
 - Novel molecular motifs discovered not present in training data
 - **73% of generated molecules** passed drug-likeness filters
 - **Emergent chirality** and **catalytic sites** observed
@@ -480,7 +480,7 @@ pie title Circuit Design Improvements
 
 ```mermaid
 flowchart TD
-    A[Noisy Experimental Data] --> B[E-AI Pattern Recognition]
+    A[Noisy Experimental Data] --> B[entropic-ai Pattern Recognition]
     B --> C[Thermodynamic Relationship Discovery]
     C --> D[Symbolic Expression Generation]
     D --> E[Mathematical Validation]
@@ -518,7 +518,7 @@ quadrantChart
     quadrant-4 High Novelty
     
     Traditional Methods: [0.3, 0.4]
-    E-AI: [0.9, 0.9]
+    entropic-ai: [0.9, 0.9]
 ```
 
 - **5× more novel mathematical relationships** discovered
@@ -530,9 +530,9 @@ quadrantChart
 
 ```mermaid
 sankey-beta
-    E-AI Adaptive Reasoning,Dataset A,89
-    E-AI Adaptive Reasoning,Dataset B,92
-    E-AI Adaptive Reasoning,Dataset C,87
+    entropic-ai Adaptive Reasoning,Dataset A,89
+    entropic-ai Adaptive Reasoning,Dataset B,92
+    entropic-ai Adaptive Reasoning,Dataset C,87
     Transformer Baseline,Dataset A,66
     Transformer Baseline,Dataset B,71
     Transformer Baseline,Dataset C,63
@@ -579,9 +579,9 @@ graph TD
     style F fill:#ffff99
 ```
 
-E-AI systems exhibit **guaranteed convergence** to thermodynamically stable states:
+entropic-ai systems exhibit **guaranteed convergence** to thermodynamically stable states:
 
-**Theorem 1**: *For any initial chaotic state with finite energy, the E-AI evolution process converges to a local minimum of the free energy landscape in bounded time.*
+**Theorem 1**: *For any initial chaotic state with finite energy, the entropic-ai evolution process converges to a local minimum of the free energy landscape in bounded time.*
 
 ```mermaid
 graph LR
@@ -613,9 +613,9 @@ graph TB
     style H fill:#90EE90
 ```
 
-**Theorem 2**: *E-AI systems generalize beyond training distributions with probability proportional to the diversity of discovered thermodynamic attractors.*
+**Theorem 2**: *entropic-ai systems generalize beyond training distributions with probability proportional to the diversity of discovered thermodynamic attractors.*
 
-This explains E-AI's superior generalization: by discovering multiple stable configurations, the system develops **robust representations** that transfer to novel scenarios.
+This explains entropic-ai's superior generalization: by discovering multiple stable configurations, the system develops **robust representations** that transfer to novel scenarios.
 
 ### 5.3 Computational Complexity
 
@@ -649,7 +649,7 @@ The thermodynamic evolution process has complexity **O(N log N)** where N is the
 
 ```mermaid
 flowchart TD
-    subgraph "E-AI Drug Discovery Pipeline"
+    subgraph "entropic-ai Drug Discovery Pipeline"
         A[Target Properties] --> B[Molecular Evolution]
         B --> C[Thermodynamic Optimization]
         C --> D[Stable Compounds]
@@ -669,7 +669,7 @@ flowchart TD
     style G fill:#c8e6c9
 ```
 
-E-AI enables **de novo drug design** through molecular evolution:
+entropic-ai enables **de novo drug design** through molecular evolution:
 
 - Generate novel compounds with desired properties
 - Optimize for multiple objectives simultaneously
@@ -752,7 +752,7 @@ graph TB
             A3[Literature]
         end
         
-        subgraph "E-AI Analysis"
+        subgraph "entropic-ai Analysis"
             B1[Entropy Analysis]
             B2[Pattern Discovery]
             B3[Correlation Mining]
@@ -831,7 +831,7 @@ graph TB
 
 ```mermaid
 graph TB
-    subgraph "E-AI Revolutionary Impact"
+    subgraph "entropic-ai Revolutionary Impact"
         A[Physics-Native Intelligence] --> B[True Generative Capability]
         A --> C[Superior Generalization]
         A --> D[Real-time Adaptability]
@@ -864,7 +864,7 @@ graph TB
     style O fill:#90EE90
 ```
 
-**Entropic AI represents a fundamental paradigm shift** from optimization-based to **physics-native intelligence**. By implementing thermodynamic principles directly in computational systems, E-AI achieves:
+**Entropic AI represents a fundamental paradigm shift** from optimization-based to **physics-native intelligence**. By implementing thermodynamic principles directly in computational systems, entropic-ai achieves:
 
 1. **True generative capability** through chaos-to-order evolution
 2. **Superior generalization** beyond training distributions  
@@ -875,7 +875,7 @@ graph TB
 ```mermaid
 graph LR
     subgraph "Future of Intelligence"
-        A[Traditional AI] --> B[E-AI Paradigm]
+        A[Traditional AI] --> B[entropic-ai Paradigm]
         B --> C[Cosmic Intelligence]
         
         A1[Gradient Descent] --> A
@@ -898,11 +898,11 @@ graph LR
 
 The experimental results demonstrate clear advantages over traditional approaches across multiple domains, with **3.2× better molecular design**, **47% more efficient circuits**, and **5× more novel discoveries** in symbolic domains.
 
-**Most importantly, E-AI establishes the foundation for truly intelligent systems that think like the universe itself**—through the inexorable pull of thermodynamic laws toward increasing complexity and decreasing entropy. This opens new frontiers in artificial intelligence, materials science, drug discovery, and our fundamental understanding of intelligence as a physical phenomenon.
+**Most importantly, entropic-ai establishes the foundation for truly intelligent systems that think like the universe itself**—through the inexorable pull of thermodynamic laws toward increasing complexity and decreasing entropy. This opens new frontiers in artificial intelligence, materials science, drug discovery, and our fundamental understanding of intelligence as a physical phenomenon.
 
 ```mermaid
 mindmap
-  root((E-AI Impact))
+  root((entropic-ai Impact))
     Scientific Revolution
       New Computing Paradigm
       Physics-Native Intelligence
@@ -973,7 +973,7 @@ graph TD
     style E fill:#f8bbd9
 ```
 
-The complete thermodynamic state of an E-AI system is described by:
+The complete thermodynamic state of an entropic-ai system is described by:
 
 ```maths
 State Vector: ψ(t) = [U(t), S(t), T(t), ρ(t)]
@@ -1046,7 +1046,7 @@ This ensures robust complexity optimization across different scales and domains.
 
 ```mermaid
 graph TB
-    subgraph "E-AI Philosophy Visualization"
+    subgraph "entropic-ai Philosophy Visualization"
         A["Chaos"] --> B["Thermodynamic Forces"]
         B --> C["Emergent Order"]
         C --> D["Intelligent Behavior"]
@@ -1073,4 +1073,4 @@ graph TB
     style D fill:#66ff66
 ```
 
-*"In the dance between order and chaos, intelligence emerges not through instruction, but through the inexorable pull of thermodynamic truth."* — E-AI Philosophy
+*"In the dance between order and chaos, intelligence emerges not through instruction, but through the inexorable pull of thermodynamic truth."* — entropic-ai Philosophy

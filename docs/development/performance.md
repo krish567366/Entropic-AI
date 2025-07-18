@@ -880,7 +880,7 @@ class PerformanceBenchmarker:
     
     def _benchmark_sphere(self, dim: int) -> dict:
         """Benchmark sphere function optimization."""
-        from eai.optimization import ThermodynamicOptimizer
+        from entropic-ai.optimization import ThermodynamicOptimizer
         
         def sphere_function(x):
             return torch.sum(x**2)
@@ -903,7 +903,7 @@ class PerformanceBenchmarker:
     
     def benchmark_memory_scaling(self) -> dict:
         """Benchmark memory usage scaling."""
-        from eai.core import ThermodynamicNetwork
+        from entropic-ai.core import ThermodynamicNetwork
         
         results = {}
         

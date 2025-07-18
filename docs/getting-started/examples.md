@@ -11,8 +11,8 @@ Let's start with a fundamental example: spontaneous pattern formation from therm
 ```python
 import torch
 import numpy as np
-from eai import EntropicNetwork, GenerativeDiffuser
-from eai.utils.visualization import plot_pattern_formation
+from entropic-ai import EntropicNetwork, GenerativeDiffuser
+from entropic-ai.utils.visualization import plot_pattern_formation
 
 # Create a simple thermodynamic network
 network = EntropicNetwork(
@@ -45,8 +45,8 @@ plot_pattern_formation(diffuser.evolution_history)
 Explore how the system navigates complex energy landscapes:
 
 ```python
-from eai.utils.visualization import plot_energy_landscape
-from eai.core import ComplexityOptimizer
+from entropic-ai.utils.visualization import plot_energy_landscape
+from entropic-ai.core import ComplexityOptimizer
 
 # Create a complex energy landscape
 def custom_energy_function(x):
@@ -88,7 +88,7 @@ plot_energy_landscape(results, save_path="energy_exploration.png")
 Predict crystal structures using thermodynamic principles:
 
 ```python
-from eai.applications import CrystalEvolution
+from entropic-ai.applications import CrystalEvolution
 import numpy as np
 
 # Define crystal parameters
@@ -134,8 +134,8 @@ stable_crystal.save_cif("evolved_crystal.cif")
 Apply thermodynamic evolution to protein folding:
 
 ```python
-from eai.applications import ProteinFolding
-from eai.utils.molecular import load_protein_sequence
+from entropic-ai.applications import ProteinFolding
+from entropic-ai.utils.molecular import load_protein_sequence
 
 # Load protein sequence
 sequence = "MKALIVLGLVLLAALVTIITVPVVLLAIVMWSDLGSLC"  # Simplified sequence
@@ -177,7 +177,7 @@ print(f"Ramachandran score: {ramachandran_score:.3f}")
 Optimize climate model parameters using thermodynamic principles:
 
 ```python
-from eai.applications import ClimateModelOptimization
+from entropic-ai.applications import ClimateModelOptimization
 import xarray as xr
 
 # Load climate data
@@ -229,8 +229,8 @@ print(f"Model validation score: {validation_score:.3f}")
 Design optimal antenna configurations:
 
 ```python
-from eai.applications import AntennaDesign
-from eai.utils.electromagnetic import calculate_radiation_pattern
+from entropic-ai.applications import AntennaDesign
+from entropic-ai.utils.electromagnetic import calculate_radiation_pattern
 
 # Define antenna design requirements
 requirements = {
@@ -277,7 +277,7 @@ radiation_pattern.plot_3d(save_path="antenna_pattern.png")
 Optimize supply chain networks using thermodynamic principles:
 
 ```python
-from eai.applications import SupplyChainOptimization
+from entropic-ai.applications import SupplyChainOptimization
 import pandas as pd
 
 # Load supply chain data
@@ -331,7 +331,7 @@ optimal_network.export_to_json("optimized_supply_chain.json")
 Apply thermodynamic principles to financial portfolio optimization:
 
 ```python
-from eai.applications import PortfolioOptimization
+from entropic-ai.applications import PortfolioOptimization
 import yfinance as yf
 
 # Download stock data
@@ -387,8 +387,8 @@ print(f"Max drawdown: {backtest_results.max_drawdown:.2%}")
 Develop trading strategies using thermodynamic market analysis:
 
 ```python
-from eai.applications import CryptoTradingStrategy
-from eai.utils.market import get_crypto_data
+from entropic-ai.applications import CryptoTradingStrategy
+from entropic-ai.utils.market import get_crypto_data
 
 # Get cryptocurrency data
 crypto_data = get_crypto_data(
@@ -457,8 +457,8 @@ print(f"Profit factor: {simulation_results.profit_factor:.2f}")
 Create art using thermodynamic evolution:
 
 ```python
-from eai.applications import GenerativeArt
-from eai.utils.visualization import save_artistic_evolution
+from entropic-ai.applications import GenerativeArt
+from entropic-ai.utils.visualization import save_artistic_evolution
 import matplotlib.pyplot as plt
 
 # Initialize generative art system
@@ -509,8 +509,8 @@ save_artistic_evolution(
 Compose music using thermodynamic principles:
 
 ```python
-from eai.applications import MusicComposition
-from eai.utils.audio import save_midi, play_audio
+from entropic-ai.applications import MusicComposition
+from entropic-ai.utils.audio import save_midi, play_audio
 
 # Initialize music composer
 composer = MusicComposition(
@@ -562,8 +562,8 @@ composition.generate_sheet_music("evolved_composition.pdf")
 Optimize traffic flow in a smart city using thermodynamic principles:
 
 ```python
-from eai.applications import SmartCityTraffic
-from eai.utils.gis import load_city_network
+from entropic-ai.applications import SmartCityTraffic
+from entropic-ai.utils.gis import load_city_network
 import networkx as nx
 
 # Load city street network
@@ -623,8 +623,8 @@ optimized_traffic.visualize_traffic_flow(
 Accelerate drug discovery using thermodynamic molecular evolution:
 
 ```python
-from eai.applications import DrugDiscoveryPipeline
-from eai.utils.cheminformatics import load_protein_target
+from entropic-ai.applications import DrugDiscoveryPipeline
+from entropic-ai.utils.cheminformatics import load_protein_target
 
 # Load target protein
 target_protein = load_protein_target("EGFR_kinase.pdb")
@@ -685,8 +685,8 @@ print(f"Development probability: {best_candidate.development_probability:.1%}")
 Compare Entropic AI with traditional optimization methods:
 
 ```python
-from eai.benchmarks import OptimizationBenchmark
-from eai.utils.comparison import compare_methods
+from entropic-ai.benchmarks import OptimizationBenchmark
+from entropic-ai.utils.comparison import compare_methods
 import time
 
 # Define benchmark problems

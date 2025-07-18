@@ -24,7 +24,6 @@ class LicenseEnforcedInstall(install):
         print("No free usage or grace period is provided.")
         print("\n📧 For licensing information:")
         print("   Email: bajpaikrishna715@gmail.com")
-        print("   Web: https://entropicai.com/licensing")
         print("\n💼 License Types Available:")
         print("   • Academic: Research and education")
         print("   • Professional: Commercial development")
@@ -59,7 +58,7 @@ class LicenseEnforcedDevelop(develop):
 # Read version from package
 def read_version():
     version_file = os.path.join(os.path.dirname(__file__), 'eai', '__init__.py')
-    with open(version_file, 'r') as f:
+    with open(version_file, 'r', encoding='utf-8') as f:
         for line in f:
             if line.startswith('__version__'):
                 return line.split('=')[1].strip().strip('"\'')

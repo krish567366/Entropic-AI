@@ -59,9 +59,9 @@ tests/
 import pytest
 import torch
 import numpy as np
-from eai.core import ThermodynamicNetwork
-from eai.core.energy import HamiltonianEnergy
-from eai.core.entropy import BoltzmannEntropy
+from entropic-ai.core import ThermodynamicNetwork
+from entropic-ai.core.energy import HamiltonianEnergy
+from entropic-ai.core.entropy import BoltzmannEntropy
 
 class TestThermodynamicNetwork:
     """Test thermodynamic network functionality."""
@@ -239,7 +239,7 @@ class TestEntropyMeasures:
     
     def test_shannon_entropy(self):
         """Test Shannon entropy computation."""
-        from eai.core.entropy import ShannonEntropy
+        from entropic-ai.core.entropy import ShannonEntropy
         
         shannon = ShannonEntropy()
         
@@ -258,7 +258,7 @@ class TestEntropyMeasures:
     
     def test_boltzmann_entropy(self):
         """Test Boltzmann entropy computation."""
-        from eai.core.entropy import BoltzmannEntropy
+        from entropic-ai.core.entropy import BoltzmannEntropy
         
         boltzmann = BoltzmannEntropy()
         
@@ -273,7 +273,7 @@ class TestEntropyMeasures:
     
     def test_entropy_extensivity(self):
         """Test that entropy is extensive."""
-        from eai.core.entropy import ShannonEntropy
+        from entropic-ai.core.entropy import ShannonEntropy
         
         shannon = ShannonEntropy()
         
@@ -317,7 +317,7 @@ class TestCircuitEvolution:
     
     def test_circuit_specification_parsing(self, simple_truth_table):
         """Test circuit specification parsing."""
-        from eai.applications import CircuitEvolution
+        from entropic-ai.applications import CircuitEvolution
         
         evolver = CircuitEvolution()
         spec = evolver.parse_truth_table(simple_truth_table)
@@ -328,7 +328,7 @@ class TestCircuitEvolution:
     
     def test_circuit_generation(self):
         """Test random circuit generation."""
-        from eai.applications import CircuitEvolution
+        from entropic-ai.applications import CircuitEvolution
         
         evolver = CircuitEvolution(
             component_library=['AND', 'OR', 'NOT'],
@@ -343,8 +343,8 @@ class TestCircuitEvolution:
     
     def test_circuit_simulation(self, simple_truth_table):
         """Test circuit simulation correctness."""
-        from eai.applications import CircuitEvolution
-        from eai.circuits import Circuit, ANDGate
+        from entropic-ai.applications import CircuitEvolution
+        from entropic-ai.circuits import Circuit, ANDGate
         
         # Create simple AND circuit
         circuit = Circuit()
@@ -369,7 +369,7 @@ class TestCircuitEvolution:
     @pytest.mark.slow
     def test_circuit_evolution_convergence(self, simple_truth_table):
         """Test that circuit evolution converges to correct solution."""
-        from eai.applications import CircuitEvolution
+        from entropic-ai.applications import CircuitEvolution
         
         evolver = CircuitEvolution(
             component_library=['AND', 'OR', 'NOT'],
@@ -402,7 +402,7 @@ class TestFullPipeline:
     def test_optimization_pipeline(self):
         """Test full optimization workflow."""
         import torch
-        from eai import optimize
+        from entropic-ai import optimize
         
         # Define test function (Rosenbrock)
         def rosenbrock(x):
@@ -426,7 +426,7 @@ class TestFullPipeline:
     def test_discovery_pipeline(self):
         """Test scientific discovery workflow."""
         import pandas as pd
-        from eai import discover
+        from entropic-ai import discover
         
         # Generate synthetic pendulum data
         lengths = torch.linspace(0.1, 1.0, 20)
@@ -468,7 +468,7 @@ class TestMultiObjectiveIntegration:
     
     def test_pareto_front_generation(self):
         """Test Pareto front generation."""
-        from eai.optimization import MultiObjectiveOptimizer
+        from entropic-ai.optimization import MultiObjectiveOptimizer
         
         # Define conflicting objectives
         def objective1(x):
@@ -512,7 +512,7 @@ class TestOptimizationBenchmarks:
     @pytest.mark.benchmark
     def test_sphere_function_benchmark(self, benchmark):
         """Benchmark sphere function optimization."""
-        from eai.optimization import ThermodynamicOptimizer
+        from entropic-ai.optimization import ThermodynamicOptimizer
         
         def sphere_function(x):
             return torch.sum(x**2)
@@ -535,7 +535,7 @@ class TestOptimizationBenchmarks:
     @pytest.mark.benchmark
     def test_scalability_benchmark(self, benchmark):
         """Benchmark performance scaling with problem size."""
-        from eai.optimization import ThermodynamicOptimizer
+        from entropic-ai.optimization import ThermodynamicOptimizer
         
         results = {}
         
@@ -571,7 +571,7 @@ class TestMemoryBenchmarks:
         """Test memory usage with problem size."""
         import psutil
         import os
-        from eai.core import ThermodynamicNetwork
+        from entropic-ai.core import ThermodynamicNetwork
         
         process = psutil.Process(os.getpid())
         memory_usage = {}
@@ -615,7 +615,7 @@ class TestThermodynamicLaws:
     
     def test_energy_conservation(self):
         """Test first law of thermodynamics."""
-        from eai.core import ThermodynamicNetwork
+        from entropic-ai.core import ThermodynamicNetwork
         
         network = ThermodynamicNetwork(10, [20], 5)
         
@@ -642,7 +642,7 @@ class TestThermodynamicLaws:
     
     def test_entropy_increase(self):
         """Test second law of thermodynamics."""
-        from eai.core import ThermodynamicNetwork
+        from entropic-ai.core import ThermodynamicNetwork
         
         network = ThermodynamicNetwork(10, [20], 5)
         
@@ -670,7 +670,7 @@ class TestThermodynamicLaws:
     
     def test_fluctuation_dissipation_theorem(self):
         """Test fluctuation-dissipation relationship."""
-        from eai.core import ThermodynamicNetwork
+        from entropic-ai.core import ThermodynamicNetwork
         
         network = ThermodynamicNetwork(5, [10], 3)
         temperature = 1.0
@@ -709,7 +709,7 @@ class TestKnownSolutions:
     
     def test_harmonic_oscillator(self):
         """Test harmonic oscillator energy levels."""
-        from eai.applications import QuantumSystemEvolution
+        from entropic-ai.applications import QuantumSystemEvolution
         
         # Set up 1D harmonic oscillator
         def harmonic_potential(x):
@@ -738,7 +738,7 @@ class TestKnownSolutions:
     
     def test_hydrogen_atom_ground_state(self):
         """Test hydrogen atom ground state."""
-        from eai.applications import AtomicSystemEvolution
+        from entropic-ai.applications import AtomicSystemEvolution
         
         # Set up hydrogen atom (simplified)
         def coulomb_potential(r):
@@ -758,7 +758,7 @@ class TestKnownSolutions:
     
     def test_traveling_salesman_optimal(self):
         """Test TSP with known optimal solution."""
-        from eai.applications import CombinatorialOptimization
+        from entropic-ai.applications import CombinatorialOptimization
         import networkx as nx
         
         # Create small TSP with known solution
@@ -851,7 +851,7 @@ pytest.mark.benchmark = pytest.mark.skipif(
 pytest
 
 # Run with coverage
-pytest --cov=eai --cov-report=html
+pytest --cov=entropic-ai --cov-report=html
 
 # Run specific test categories
 pytest -m "not slow"  # Skip slow tests
@@ -900,7 +900,7 @@ jobs:
     
     - name: Run unit tests
       run: |
-        pytest tests/unit/ --cov=eai --cov-report=xml
+        pytest tests/unit/ --cov=entropic-ai --cov-report=xml
     
     - name: Run integration tests
       run: |

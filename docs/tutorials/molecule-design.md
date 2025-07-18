@@ -14,7 +14,7 @@ Molecular design with Entropic AI follows nature's approach to molecular evoluti
 ## Prerequisites
 
 ```bash
-pip install eai[molecules]  # Includes molecular modeling dependencies
+pip install entropic-ai[molecules]  # Includes molecular modeling dependencies
 ```
 
 Optional for advanced visualization:
@@ -30,8 +30,8 @@ Let's start with a simple example: evolving a stable organic molecule from carbo
 ### Step 1: Initialize the Molecular Evolver
 
 ```python
-from eai.applications import MoleculeEvolution
-from eai.utils.visualization import plot_molecular_evolution
+from entropic-ai.applications import MoleculeEvolution
+from entropic-ai.utils.visualization import plot_molecular_evolution
 import numpy as np
 
 # Create molecular evolution system
@@ -205,7 +205,7 @@ print(f"Drug-likeness score: {drug_molecule.druglike_score:.3f}")
 
 ```python
 # Optimize multiple properties simultaneously
-from eai.core import ComplexityOptimizer
+from entropic-ai.core import ComplexityOptimizer
 
 # Define multiple objectives
 objectives = {
@@ -378,7 +378,7 @@ print(f"Final score: {current_best.total_score:.3f}")
 
 ```python
 # Integrate with virtual screening workflows
-from eai.interfaces import ChemblInterface, PubchemInterface
+from entropic-ai.interfaces import ChemblInterface, PubchemInterface
 
 # Screen against ChEMBL bioactivity data
 chembl = ChemblInterface()
@@ -414,7 +414,7 @@ print(f"Conformational stability: {md_result['stability']:.3f}")
 ### Energy Landscape Visualization
 
 ```python
-from eai.utils.visualization import plot_molecular_energy_landscape
+from entropic-ai.utils.visualization import plot_molecular_energy_landscape
 
 # Plot the molecular energy landscape
 plot_molecular_energy_landscape(

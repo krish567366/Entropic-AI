@@ -16,10 +16,10 @@ Circuit synthesis in Entropic AI works by:
 ```python
 import numpy as np
 import torch
-from eai.core import ThermodynamicNetwork, ComplexityOptimizer
-from eai.applications import CircuitEvolution
-from eai.circuits import LogicGate, Wire, ThermalNoise
-from eai.optimization import CircuitObjective
+from entropic-ai.core import ThermodynamicNetwork, ComplexityOptimizer
+from entropic-ai.applications import CircuitEvolution
+from entropic-ai.circuits import LogicGate, Wire, ThermalNoise
+from entropic-ai.optimization import CircuitObjective
 ```
 
 ## Basic Circuit Synthesis

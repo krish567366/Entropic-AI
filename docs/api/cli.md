@@ -9,7 +9,7 @@ The Entropic AI CLI provides convenient command-line access to all major functio
 The CLI is automatically installed with the Entropic AI package:
 
 ```bash
-pip install eai
+pip install entropic-ai
 ```
 
 ### Verify Installation
@@ -611,7 +611,7 @@ jobs:
         python-version: '3.9'
     
     - name: Install Entropic AI
-      run: pip install eai
+      run: pip install entropic-ai
     
     - name: Run Benchmarks
       run: |

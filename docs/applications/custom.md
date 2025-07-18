@@ -9,8 +9,8 @@ This section describes how to create custom applications using the Entropic AI f
 The Entropic AI framework provides several extensible base classes that can be specialized for custom domains:
 
 ```python
-from eai.core import ThermodynamicNetwork, ComplexityOptimizer, GenerativeDiffuser
-from eai.applications.base import BaseApplication
+from entropic-ai.core import ThermodynamicNetwork, ComplexityOptimizer, GenerativeDiffuser
+from entropic-ai.applications.base import BaseApplication
 
 class CustomApplication(BaseApplication):
     """Base class for custom thermodynamic applications."""
@@ -290,7 +290,7 @@ class ArchitecturalDesign(CustomApplication):
 Adaptive game playing strategy:
 
 ```python
-class GameAIStrategy(CustomApplication):
+class Gamentropic-aiStrategy(CustomApplication):
     def __init__(self, game_rules, opponent_models):
         self.game_rules = game_rules
         self.opponent_models = opponent_models

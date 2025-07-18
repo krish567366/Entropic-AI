@@ -2,7 +2,7 @@
 
 This section provides comprehensive API documentation for the core Entropic AI components.
 
-## eai.core.thermodynamic_network
+## entropic-ai.core.thermodynamic_network
 
 ### ThermodynamicNode
 
@@ -314,7 +314,7 @@ def maximize_entropy_production(self, x: torch.Tensor) -> torch.Tensor:
     """
 ```
 
-## eai.core.complexity_optimizer
+## entropic-ai.core.complexity_optimizer
 
 ### ComplexityOptimizer
 
@@ -474,7 +474,7 @@ def compute_pareto_front(
     """
 ```
 
-## eai.core.generative_diffuser
+## entropic-ai.core.generative_diffuser
 
 ### GenerativeDiffuser
 
@@ -698,7 +698,7 @@ class PhaseEvolutionResult(EvolutionResult):
 ### Basic Usage
 
 ```python
-from eai.core import ThermodynamicNetwork, ComplexityOptimizer, GenerativeDiffuser
+from entropic-ai.core import ThermodynamicNetwork, ComplexityOptimizer, GenerativeDiffuser
 import torch
 
 # Create components
@@ -749,7 +749,7 @@ All core classes raise specific exceptions:
 - `ComplexityError`: Complexity computation failures
 
 ```python
-from eai.core.exceptions import ThermodynamicError
+from entropic-ai.core.exceptions import ThermodynamicError
 
 try:
     result = diffuser.evolve(initial_state)

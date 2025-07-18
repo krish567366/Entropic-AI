@@ -57,13 +57,13 @@ No! While understanding the underlying physics helps, Entropic AI is designed to
 
 ```bash
 # Basic installation
-pip install eai
+pip install entropic-ai
 
 # With GPU support
-pip install eai[gpu]
+pip install entropic-ai[gpu]
 
 # Full installation with all optional dependencies
-pip install eai[full]
+pip install entropic-ai[full]
 
 # Development installation
 git clone https://github.com/krish567366/Entropic-AI.git
@@ -184,7 +184,7 @@ optimizer = ComplexityOptimizer(
 ### How do I design molecules with specific properties?
 
 ```python
-from eai.applications import MoleculeEvolution
+from entropic-ai.applications import MoleculeEvolution
 
 # Define target properties precisely
 evolver = MoleculeEvolution(
@@ -209,7 +209,7 @@ evolver = MoleculeEvolution(
 Yes, but it's designed for structural discovery rather than prediction:
 
 ```python
-from eai.applications import TimeSeriesEvolution
+from entropic-ai.applications import TimeSeriesEvolution
 
 # Discover underlying dynamical system
 discoverer = TimeSeriesEvolution(
@@ -261,7 +261,7 @@ network = network.to(device)
 **2. Parallel evolution:**
 
 ```python
-from eai.utils import ParallelEvolver
+from entropic-ai.utils import ParallelEvolver
 
 parallel_evolver = ParallelEvolver(n_workers=4)
 results = parallel_evolver.evolve_batch(initial_states)
@@ -314,7 +314,7 @@ torch.cuda.empty_cache()  # If using GPU
 Yes, for large problems:
 
 ```python
-from eai.distributed import DistributedEvolver
+from entropic-ai.distributed import DistributedEvolver
 
 # Multi-GPU evolution
 evolver = DistributedEvolver(
@@ -336,7 +336,7 @@ result = evolver.evolve_distributed(
 
 ```python
 # Use as a library
-from eai import EntropicNetwork, GenerativeDiffuser
+from entropic-ai import EntropicNetwork, GenerativeDiffuser
 
 def my_optimization_function(data):
     # Your existing code
@@ -363,7 +363,7 @@ python my_analysis.py results.json
 
 ```python
 # Start Entropic AI server
-from eai.server import EntropyServer
+from entropic-ai.server import EntropyServer
 server = EntropyServer(port=8080)
 server.start()
 
@@ -445,7 +445,7 @@ plot.save_pdf("plot.pdf")
 
 Include this information:
 
-- Entropic AI version: `eai.__version__`
+- Entropic AI version: `entropic-ai.__version__`
 - Python version
 - Operating system
 - Minimal reproducible example
@@ -456,8 +456,8 @@ Include this information:
 Enable debug mode for detailed information:
 
 ```python
-import eai
-eai.set_debug_mode(True)
+import entropic-ai
+entropic-ai.set_debug_mode(True)
 
 # Now all operations will provide detailed logging
 result = diffuser.evolve(chaos)
@@ -468,7 +468,7 @@ result = diffuser.evolve(chaos)
 Profile your code to identify bottlenecks:
 
 ```python
-from eai.utils import profile_evolution
+from entropic-ai.utils import profile_evolution
 
 # Profile evolution process
 profiler = profile_evolution(

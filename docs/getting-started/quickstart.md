@@ -13,7 +13,7 @@ Welcome to Entropic AI! This guide will get you up and running with thermodynami
 ### Install from PyPI
 
 ```bash
-pip install eai
+pip install entropic-ai
 ```
 
 ### Development Installation
@@ -34,7 +34,7 @@ Let's start with a simple example that demonstrates the core principle of Entrop
 
 ```python
 import torch
-from eai import EntropicNetwork, ComplexityOptimizer, GenerativeDiffuser
+from entropic-ai import EntropicNetwork, ComplexityOptimizer, GenerativeDiffuser
 
 # Step 1: Create a thermodynamic neural network
 network = EntropicNetwork(
@@ -80,7 +80,7 @@ Final entropy: 0.234
 ### Example 2: Monitoring the Thermodynamic Process
 
 ```python
-from eai.utils import plot_entropy_evolution, plot_energy_landscape
+from entropic-ai.utils import plot_entropy_evolution, plot_energy_landscape
 
 # Enable detailed monitoring
 diffuser.enable_monitoring()
@@ -158,7 +158,7 @@ entropic-ai run --config experiment_config.json
 Design novel molecular structures:
 
 ```python
-from eai.applications import MoleculeEvolution
+from entropic-ai.applications import MoleculeEvolution
 
 # Initialize molecular evolver
 evolver = MoleculeEvolution(
@@ -189,7 +189,7 @@ print(f"Binding affinity: {molecule.binding_affinity:.3f}")
 Generate thermodynamically optimal digital circuits:
 
 ```python
-from eai.applications import CircuitEvolution
+from entropic-ai.applications import CircuitEvolution
 
 # Define target logic function
 def target_function(inputs):
@@ -221,7 +221,7 @@ print(f"Thermal stability: {circuit.thermal_stability:.3f}")
 Find symbolic expressions that explain data:
 
 ```python
-from eai.applications import TheoryDiscovery
+from entropic-ai.applications import TheoryDiscovery
 import numpy as np
 
 # Generate some experimental data
@@ -297,7 +297,7 @@ optimizer = ComplexityOptimizer(
 ### Real-time Monitoring
 
 ```python
-from eai.utils import ThermodynamicMonitor
+from entropic-ai.utils import ThermodynamicMonitor
 
 # Set up monitoring
 monitor = ThermodynamicMonitor(
@@ -318,7 +318,7 @@ monitor.show_live_plots()
 ### Visualization Tools
 
 ```python
-from eai.utils.visualization import (
+from entropic-ai.utils.visualization import (
     plot_energy_landscape,
     plot_phase_space,
     plot_complexity_evolution,

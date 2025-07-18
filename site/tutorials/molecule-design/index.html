@@ -2567,7 +2567,7 @@
 <li><strong>Crystallize into stable molecules</strong> — Thermodynamically favorable structures</li>
 </ol>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>eai<span class="o">[</span>molecules<span class="o">]</span><span class="w">  </span><span class="c1"># Includes molecular modeling dependencies</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>entropic-ai<span class="o">[</span>molecules<span class="o">]</span><span class="w">  </span><span class="c1"># Includes molecular modeling dependencies</span>
 </span></code></pre></div>
 <p>Optional for advanced visualization:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>py3Dmol<span class="w"> </span>rdkit-pypi<span class="w">  </span><span class="c1"># 3D molecular visualization</span>
@@ -2575,8 +2575,8 @@
 <h2 id="basic-molecule-evolution">Basic Molecule Evolution<a class="headerlink" href="#basic-molecule-evolution" title="Permanent link">&para;</a></h2>
 <p>Let's start with a simple example: evolving a stable organic molecule from carbon, nitrogen, oxygen, and hydrogen atoms.</p>
 <h3 id="step-1-initialize-the-molecular-evolver">Step 1: Initialize the Molecular Evolver<a class="headerlink" href="#step-1-initialize-the-molecular-evolver" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeEvolution</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.utils.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_molecular_evolution</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">applications</span> <span class="kn">import</span><span class="w"> </span><span class="nn">MoleculeEvolution</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">visualization</span> <span class="kn">import</span><span class="w"> </span><span class="nn">plot_molecular_evolution</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Create molecular evolution system</span>
@@ -2727,7 +2727,7 @@
 </span></code></pre></div>
 <h3 id="multi-objective-optimization">Multi-Objective Optimization<a class="headerlink" href="#multi-objective-optimization" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Optimize multiple properties simultaneously</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComplexityOptimizer</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">core</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ComplexityOptimizer</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Define multiple objectives</span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">objectives</span> <span class="o">=</span> <span class="p">{</span>
@@ -2875,7 +2875,7 @@
 <h2 id="experimental-validation">Experimental Validation<a class="headerlink" href="#experimental-validation" title="Permanent link">&para;</a></h2>
 <h3 id="virtual-screening-integration">Virtual Screening Integration<a class="headerlink" href="#virtual-screening-integration" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Integrate with virtual screening workflows</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.interfaces</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChemblInterface</span><span class="p">,</span> <span class="n">PubchemInterface</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">interfaces</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ChemblInterface</span><span class="o">,</span><span class="w"> </span><span class="nn">PubchemInterface</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Screen against ChEMBL bioactivity data</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">chembl</span> <span class="o">=</span> <span class="n">ChemblInterface</span><span class="p">()</span>
@@ -2904,7 +2904,7 @@
 </span></code></pre></div>
 <h2 id="visualization-and-analysis">Visualization and Analysis<a class="headerlink" href="#visualization-and-analysis" title="Permanent link">&para;</a></h2>
 <h3 id="energy-landscape-visualization">Energy Landscape Visualization<a class="headerlink" href="#energy-landscape-visualization" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.utils.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_molecular_energy_landscape</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">visualization</span> <span class="kn">import</span><span class="w"> </span><span class="nn">plot_molecular_energy_landscape</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1"># Plot the molecular energy landscape</span>
 </span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">plot_molecular_energy_landscape</span><span class="p">(</span>

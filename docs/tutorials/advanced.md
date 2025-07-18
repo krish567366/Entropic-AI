@@ -19,10 +19,10 @@ import numpy as np
 import torch
 import torch.nn as nn
 from scipy.optimize import minimize
-from eai.core import ThermodynamicNetwork, ComplexityOptimizer, GenerativeDiffuser
-from eai.advanced import MultiScaleEvolver, AdaptiveThermostat, HybridOptimizer
-from eai.quantum import QuantumThermodynamicNetwork
-from eai.realtime import StreamingEvolver, DynamicAdaptation
+from entropic-ai.core import ThermodynamicNetwork, ComplexityOptimizer, GenerativeDiffuser
+from entropic-ai.advanced import MultiScaleEvolver, AdaptiveThermostat, HybridOptimizer
+from entropic-ai.quantum import QuantumThermodynamicNetwork
+from entropic-ai.realtime import StreamingEvolver, DynamicAdaptation
 ```
 
 ## Multi-Scale Thermodynamic Systems
