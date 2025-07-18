@@ -1,0 +1,118 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eai"
+dynamic = ["version", "readme"]
+description = "Entropic AI: Generative Intelligence through Thermodynamic Self-Organization (Patent Pending)"
+readme = "README.md"
+license = {text = "Proprietary"}
+authors = [
+    {name = "Krishna Bajpai", email = "bajpaikrishna715@gmail.com"}
+]
+maintainers = [
+    {name = "Krishna Bajpai", email = "bajpaikrishna715@gmail.com"}
+]
+keywords = [
+    "artificial-intelligence", 
+    "thermodynamics", 
+    "entropy", 
+    "complex-systems", 
+    "emergent-intelligence",
+    "generative-ai",
+    "physics-based-ai",
+    "self-organization"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.6.0",
+    "seaborn>=0.12.0",
+    "tqdm>=4.64.0",
+    "pydantic>=2.0.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "wandb>=0.15.0",
+    "networkx>=3.0",
+    "scikit-learn>=1.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0",
+]
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.0.0",
+    "mkdocstrings[python]>=0.22.0",
+    "mkdocs-jupyter>=0.24.0",
+    "mkdocs-mermaid2-plugin>=1.0.0",
+]
+jax = [
+    "jax>=0.4.0",
+    "jaxlib>=0.4.0",
+    "flax>=0.7.0",
+    "optax>=0.1.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/krish567366/Entropic-AI"
+Documentation = "https://krish567366.github.io/Entropic-AI/"
+Repository = "https://github.com/krish567366/Entropic-AI"
+"Bug Tracker" = "https://github.com/krish567366/Entropic-AI/issues"
+
+[project.scripts]
+entropic-ai = "eai.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["eai*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=eai --cov-report=term-missing --cov-report=html"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"], content-type = "text/markdown"}
+
+# Patent notice
+# IMPORTANT: This software implements patent-pending technologies.
+# Commercial use requires licensing. Contact bajpaikrishna715@gmail.com
