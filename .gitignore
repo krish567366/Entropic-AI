@@ -1,2 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode / PyCharm / other IDEs
+.vscode/
+.idea/
+*.swp
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+Pipfile.lock
+poetry.lock
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.whl
+
+# Logs and debugging
+*.log
+*.out
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Kaggle
+kaggle.json
+__notebook_source__.ipynb
+
+# Custom project folders you want to ignore
 eai/
 tests/
+cache/
+models/
+artifacts/
+checkpoints/
+runs/
+wandb/
+
+# PyTorch Lightning, TensorBoard, etc.
+lightning_logs/
+tensorboard/
