@@ -1,0 +1,3561 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Generative Intelligence through Thermodynamic Self-Organization">
+      
+      
+        <meta name="author" content="Krishna Bajpai">
+      
+      
+        <link rel="canonical" href="https://krish567366.github.io/Entropic-AI/architecture/diffusion/">
+      
+      
+        <link rel="prev" href="../optimizers/">
+      
+      
+        <link rel="next" href="../../applications/molecules/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Generative Diffusion - Entropic AI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#diffusion-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Entropic AI Documentation" class="md-header__button md-logo" aria-label="Entropic AI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entropic AI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generative Diffusion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/krish567366/Entropic-AI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    krish567366/Entropic-AI
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../theory/foundations/" class="md-tabs__link">
+          
+  
+  
+  Scientific Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../applications/molecules/" class="md-tabs__link">
+          
+  
+  
+  Applications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/molecule-design/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/faq/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/core/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../development/contributing/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/paper/" class="md-tabs__link">
+          
+  
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Entropic AI Documentation" class="md-nav__button md-logo" aria-label="Entropic AI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Entropic AI Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/krish567366/Entropic-AI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    krish567366/Entropic-AI
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scientific Theory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scientific Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/thermodynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thermodynamic Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/entropy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entropy and Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/emergence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Emergent Order
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../theory/mathematics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mathematical Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thermodynamic Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimizers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complexity Optimizers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Generative Diffusion
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generative Diffusion
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Foundation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Theoretical Foundation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-diffusion-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Diffusion Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermodynamic-score-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Score Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thermodynamic Score Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-based-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy-Based Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-dependent-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature-Dependent Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-diffusion-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Diffusion Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reverse Diffusion Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-reverse-sde" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Reverse SDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heat-equation-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Heat Equation Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langevin-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Langevin Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Objectives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Training Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#score-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#denoising-score-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Denoising Score Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-consistency-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Consistency Loss
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-conservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy Conservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialized-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Architectures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specialized Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-based-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy-Based Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-adaptive-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature-Adaptive Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-scale-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Scale Models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sampling Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#euler-maruyama-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euler-Maruyama Scheme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heuns-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Heun's Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predictor-corrector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predictor-Corrector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Sampling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temperature-schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature Schedules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Temperature Schedules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosine-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cosine Schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learned-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learned Schedule
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Constraints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conservation-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conservation Laws
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boundary Conditions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-modal-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Modal Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Modal Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixture-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixture Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode Switching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional-score-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Score Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classifier-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classifier Guidance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classifier-free-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classifier-Free Guidance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#molecular-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Molecular Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#climate-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Climate Modeling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluid-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluid Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neural-odes-for-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural ODEs for Diffusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stochastic-interpolants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stochastic Interpolants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Metrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Quality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-realism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Realism
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceleration-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceleration Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-diffusion-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Diffusion Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-equilibrium-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Equilibrium Diffusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-neural-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Neural Architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/molecules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Molecule Evolution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circuit Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/theories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Theory Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/custom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/molecule-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Molecule Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/circuit-synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circuit Synthesis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/law-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Physical Laws Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/advanced-config.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/custom-applications.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/utilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/paper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patent Information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Foundation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Theoretical Foundation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forward-diffusion-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Diffusion Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermodynamic-score-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Score Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thermodynamic Score Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-based-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy-Based Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-dependent-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature-Dependent Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reverse-diffusion-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Diffusion Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reverse Diffusion Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-reverse-sde" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Reverse SDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heat-equation-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Heat Equation Connection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langevin-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Langevin Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Objectives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Training Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#score-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#denoising-score-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Denoising Score Matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-consistency-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Consistency Loss
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-conservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy Conservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialized-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Architectures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specialized Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#energy-based-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy-Based Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-adaptive-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature-Adaptive Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-scale-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Scale Models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampling Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sampling Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#euler-maruyama-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euler-Maruyama Scheme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heuns-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Heun's Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predictor-corrector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predictor-Corrector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Sampling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temperature-schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature Schedules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Temperature Schedules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosine-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cosine Schedule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learned-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learned Schedule
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Constraints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conservation-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conservation Laws
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boundary Conditions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-modal-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Modal Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Modal Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixture-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixture Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode Switching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional-score-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Score Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classifier-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classifier Guidance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classifier-free-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classifier-Free Guidance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#molecular-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Molecular Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#climate-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Climate Modeling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluid-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluid Dynamics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neural-odes-for-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural ODEs for Diffusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stochastic-interpolants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stochastic Interpolants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation Metrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thermodynamic-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thermodynamic Consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Quality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-realism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Realism
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceleration-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceleration Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-diffusion-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Diffusion Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-equilibrium-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Equilibrium Diffusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-neural-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Neural Architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="diffusion-models">Diffusion Models<a class="headerlink" href="#diffusion-models" title="Permanent link">&para;</a></h1>
+<p>This section covers thermodynamic diffusion models, which leverage principles of thermal diffusion and stochastic processes to generate samples and solve inverse problems.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Thermodynamic diffusion models extend traditional diffusion models by incorporating explicit thermodynamic state variables and physical constraints. These models can generate samples that evolve according to realistic physical processes while maintaining thermodynamic consistency.</p>
+<h2 id="theoretical-foundation">Theoretical Foundation<a class="headerlink" href="#theoretical-foundation" title="Permanent link">&para;</a></h2>
+<h3 id="forward-diffusion-process">Forward Diffusion Process<a class="headerlink" href="#forward-diffusion-process" title="Permanent link">&para;</a></h3>
+<p>The forward process gradually adds noise according to a diffusion schedule:
+<span class="arithmatex">\(<span class="arithmatex">\(q(\mathbf{x}_t | \mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_t; \sqrt{1-\beta_t}\mathbf{x}_{t-1}, \beta_t \mathbf{I})\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(\beta_t\)</span> is the noise schedule.</p>
+<h3 id="thermodynamic-interpretation">Thermodynamic Interpretation<a class="headerlink" href="#thermodynamic-interpretation" title="Permanent link">&para;</a></h3>
+<p>In thermodynamic terms:</p>
+<ul>
+<li><strong>Energy</strong>: <span class="arithmatex">\(U_t = \|\mathbf{x}_t\|^2 / 2\)</span></li>
+<li><strong>Temperature</strong>: <span class="arithmatex">\(T_t = \beta_t / 2\)</span></li>
+<li><strong>Entropy</strong>: <span class="arithmatex">\(S_t = \frac{d}{2}\log(2\pi e T_t)\)</span></li>
+<li><strong>Free Energy</strong>: <span class="arithmatex">\(F_t = U_t - T_t S_t\)</span></li>
+</ul>
+<h3 id="score-function">Score Function<a class="headerlink" href="#score-function" title="Permanent link">&para;</a></h3>
+<p>The score function represents the gradient of log-density:
+<span class="arithmatex">\(<span class="arithmatex">\(s_\theta(\mathbf{x}_t, t) = \nabla_{\mathbf{x}_t} \log p_t(\mathbf{x}_t)\)</span>\)</span></p>
+<h2 id="thermodynamic-score-models">Thermodynamic Score Models<a class="headerlink" href="#thermodynamic-score-models" title="Permanent link">&para;</a></h2>
+<h3 id="energy-based-score">Energy-Based Score<a class="headerlink" href="#energy-based-score" title="Permanent link">&para;</a></h3>
+<p>Define score in terms of energy:
+<span class="arithmatex">\(<span class="arithmatex">\(s_\theta(\mathbf{x}, t) = -\frac{1}{T_t}\nabla_{\mathbf{x}} U_\theta(\mathbf{x}, t)\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(U_\theta\)</span> is a learned energy function.</p>
+<h3 id="temperature-dependent-score">Temperature-Dependent Score<a class="headerlink" href="#temperature-dependent-score" title="Permanent link">&para;</a></h3>
+<p>Score function with explicit temperature dependence:
+<span class="arithmatex">\(<span class="arithmatex">\(s_\theta(\mathbf{x}, t) = -\frac{1}{T_t}\nabla_{\mathbf{x}} U_\theta(\mathbf{x}, t) + \sqrt{\frac{2}{T_t}}\boldsymbol{\xi}\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(\boldsymbol{\xi}\)</span> represents thermal fluctuations.</p>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ThermodynamicScoreModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">energy_net</span> <span class="o">=</span> <span class="n">EnergyNetwork</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">n_layers</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">temperature_schedule</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_temperature_schedule</span><span class="p">()</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute energy U(x,t)&quot;&quot;&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy_net</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute thermodynamic score&quot;&quot;&quot;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">x</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="n">score</span> <span class="o">=</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            <span class="n">energy</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">x</span><span class="p">,</span> <span class="n">create_graph</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span class="n">temperature</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_temperature</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="k">return</span> <span class="n">score</span> <span class="o">/</span> <span class="n">temperature</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get temperature at time t&quot;&quot;&quot;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature_schedule</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="reverse-diffusion-process">Reverse Diffusion Process<a class="headerlink" href="#reverse-diffusion-process" title="Permanent link">&para;</a></h2>
+<h3 id="thermodynamic-reverse-sde">Thermodynamic Reverse SDE<a class="headerlink" href="#thermodynamic-reverse-sde" title="Permanent link">&para;</a></h3>
+<p>The reverse-time SDE with thermodynamic interpretation:
+<span class="arithmatex">\(<span class="arithmatex">\(d\mathbf{x} = \left[\mathbf{f}(\mathbf{x}, t) - g(t)^2 s_\theta(\mathbf{x}, t)\right]dt + g(t)d\bar{\mathbf{w}}\)</span>\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{f}(\mathbf{x}, t)\)</span> is drift coefficient</li>
+<li><span class="arithmatex">\(g(t)\)</span> is diffusion coefficient</li>
+<li><span class="arithmatex">\(s_\theta(\mathbf{x}, t)\)</span> is learned score function</li>
+<li><span class="arithmatex">\(d\bar{\mathbf{w}}\)</span> is reverse Wiener process</li>
+</ul>
+<h3 id="heat-equation-connection">Heat Equation Connection<a class="headerlink" href="#heat-equation-connection" title="Permanent link">&para;</a></h3>
+<p>The reverse process satisfies a modified heat equation:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial p}{\partial t} = \nabla \cdot \left(D(t) \nabla p + D(t) p \nabla \log p_t\right)\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(D(t) = g(t)^2/2\)</span> is diffusion coefficient.</p>
+<h3 id="langevin-dynamics">Langevin Dynamics<a class="headerlink" href="#langevin-dynamics" title="Permanent link">&para;</a></h3>
+<p>Discrete sampling via Langevin MCMC:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{x}_{i+1} = \mathbf{x}_i + \epsilon s_\theta(\mathbf{x}_i, t) + \sqrt{2\epsilon T_t}\boldsymbol{\xi}\)</span>\)</span></p>
+<h2 id="training-objectives">Training Objectives<a class="headerlink" href="#training-objectives" title="Permanent link">&para;</a></h2>
+<h3 id="score-matching">Score Matching<a class="headerlink" href="#score-matching" title="Permanent link">&para;</a></h3>
+<p>Minimize score matching loss:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{L}_{\text{SM}} = \mathbb{E}_{t,\mathbf{x}_0,\boldsymbol{\epsilon}}\left[\left\|s_\theta(\mathbf{x}_t, t) - s_t(\mathbf{x}_t)\right\|^2\right]\)</span>\)</span></p>
+<p>Where <span class="arithmatex">\(s_t(\mathbf{x}_t)\)</span> is the true score.</p>
+<h3 id="denoising-score-matching">Denoising Score Matching<a class="headerlink" href="#denoising-score-matching" title="Permanent link">&para;</a></h3>
+<p>Simplified objective using noise prediction:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{L}_{\text{DSM}} = \mathbb{E}_{t,\mathbf{x}_0,\boldsymbol{\epsilon}}\left[\left\|\epsilon_\theta(\mathbf{x}_t, t) - \boldsymbol{\epsilon}\right\|^2\right]\)</span>\)</span></p>
+<h3 id="thermodynamic-consistency-loss">Thermodynamic Consistency Loss<a class="headerlink" href="#thermodynamic-consistency-loss" title="Permanent link">&para;</a></h3>
+<p>Additional term enforcing thermodynamic relations:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{L}_{\text{thermo}} = \mathbb{E}\left[\left|U + TS - F\right|^2 + \left|\frac{\partial F}{\partial T} + S\right|^2\right]\)</span>\)</span></p>
+<h3 id="energy-conservation">Energy Conservation<a class="headerlink" href="#energy-conservation" title="Permanent link">&para;</a></h3>
+<p>Penalize energy violations:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{L}_{\text{energy}} = \mathbb{E}\left[\left|\frac{dE}{dt} - P_{\text{input}} + P_{\text{dissipation}}\right|^2\right]\)</span>\)</span></p>
+<h2 id="specialized-architectures">Specialized Architectures<a class="headerlink" href="#specialized-architectures" title="Permanent link">&para;</a></h2>
+<h3 id="energy-based-networks">Energy-Based Networks<a class="headerlink" href="#energy-based-networks" title="Permanent link">&para;</a></h3>
+<p>Networks that explicitly output energy:
+<span class="arithmatex">\(<span class="arithmatex">\(U_\theta(\mathbf{x}, t) = \text{EnergyNet}(\mathbf{x}, t)\)</span>\)</span></p>
+<p>Common architectures:</p>
+<ul>
+<li>ResNet-based energy networks</li>
+<li>Transformer energy models</li>
+<li>Graph neural networks for molecular systems</li>
+</ul>
+<h3 id="temperature-adaptive-networks">Temperature-Adaptive Networks<a class="headerlink" href="#temperature-adaptive-networks" title="Permanent link">&para;</a></h3>
+<p>Networks with learnable temperature schedules:
+<span class="arithmatex">\(<span class="arithmatex">\(T_\theta(t) = \text{TempNet}(t)\)</span>\)</span></p>
+<h3 id="multi-scale-models">Multi-Scale Models<a class="headerlink" href="#multi-scale-models" title="Permanent link">&para;</a></h3>
+<p>Hierarchical models for different length scales:
+<span class="arithmatex">\(<span class="arithmatex">\(U_{\text{total}} = U_{\text{atomic}} + U_{\text{molecular}} + U_{\text{system}}\)</span>\)</span></p>
+<h2 id="sampling-methods">Sampling Methods<a class="headerlink" href="#sampling-methods" title="Permanent link">&para;</a></h2>
+<h3 id="euler-maruyama-scheme">Euler-Maruyama Scheme<a class="headerlink" href="#euler-maruyama-scheme" title="Permanent link">&para;</a></h3>
+<p>Basic numerical integration:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{x}_{i+1} = \mathbf{x}_i + h \mathbf{f}(\mathbf{x}_i, t_i) + \sqrt{h} g(t_i) \boldsymbol{\xi}_i\)</span>\)</span></p>
+<h3 id="heuns-method">Heun's Method<a class="headerlink" href="#heuns-method" title="Permanent link">&para;</a></h3>
+<p>Higher-order accuracy:
+<span class="arithmatex">\(<span class="arithmatex">\(\tilde{\mathbf{x}}_{i+1} = \mathbf{x}_i + h \mathbf{f}(\mathbf{x}_i, t_i) + \sqrt{h} g(t_i) \boldsymbol{\xi}_i\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{x}_{i+1} = \mathbf{x}_i + \frac{h}{2}[\mathbf{f}(\mathbf{x}_i, t_i) + \mathbf{f}(\tilde{\mathbf{x}}_{i+1}, t_{i+1})] + \sqrt{h} g(t_i) \boldsymbol{\xi}_i\)</span>\)</span></p>
+<h3 id="predictor-corrector">Predictor-Corrector<a class="headerlink" href="#predictor-corrector" title="Permanent link">&para;</a></h3>
+<p>Combine prediction and correction steps:</p>
+<ol>
+<li><strong>Predictor</strong>: Standard Euler step</li>
+<li><strong>Corrector</strong>: Langevin MCMC refinement</li>
+</ol>
+<h3 id="adaptive-sampling">Adaptive Sampling<a class="headerlink" href="#adaptive-sampling" title="Permanent link">&para;</a></h3>
+<p>Adjust step size based on local dynamics:
+<span class="arithmatex">\(<span class="arithmatex">\(h_{i+1} = h_i \cdot \text{adapt\_factor}(\|\mathbf{f}(\mathbf{x}_i, t_i)\|, \text{error\_estimate})\)</span>\)</span></p>
+<h2 id="temperature-schedules">Temperature Schedules<a class="headerlink" href="#temperature-schedules" title="Permanent link">&para;</a></h2>
+<h3 id="linear-schedule">Linear Schedule<a class="headerlink" href="#linear-schedule" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[T_t = T_{\text{start}} \frac{T_{\text{end}} - t}{T_{\text{end}} - T_{\text{start}}}\]</div>
+<h3 id="exponential-schedule">Exponential Schedule<a class="headerlink" href="#exponential-schedule" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[T_t = T_{\text{start}} \exp\left(-\frac{t}{\tau}\right)\]</div>
+<h3 id="cosine-schedule">Cosine Schedule<a class="headerlink" href="#cosine-schedule" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[T_t = T_{\text{end}} + \frac{T_{\text{start}} - T_{\text{end}}}{2}\left(1 + \cos\left(\frac{\pi t}{T}\right)\right)\]</div>
+<h3 id="learned-schedule">Learned Schedule<a class="headerlink" href="#learned-schedule" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[T_t = \text{ScheduleNet}(t, \text{problem\_features})\]</div>
+<h2 id="physical-constraints">Physical Constraints<a class="headerlink" href="#physical-constraints" title="Permanent link">&para;</a></h2>
+<h3 id="conservation-laws">Conservation Laws<a class="headerlink" href="#conservation-laws" title="Permanent link">&para;</a></h3>
+<p>Enforce conservation during generation:</p>
+<p><strong>Energy Conservation</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(\sum_i E_i = \text{constant}\)</span>\)</span></p>
+<p><strong>Momentum Conservation</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(\sum_i m_i \mathbf{v}_i = \text{constant}\)</span>\)</span></p>
+<p><strong>Mass Conservation</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(\sum_i m_i = \text{constant}\)</span>\)</span></p>
+<h3 id="symmetries">Symmetries<a class="headerlink" href="#symmetries" title="Permanent link">&para;</a></h3>
+<p>Respect physical symmetries:</p>
+<p><strong>Translation Invariance</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(U(\mathbf{x} + \mathbf{a}) = U(\mathbf{x})\)</span>\)</span></p>
+<p><strong>Rotation Invariance</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(U(R\mathbf{x}) = U(\mathbf{x})\)</span>\)</span></p>
+<p><strong>Permutation Invariance</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(U(P\mathbf{x}) = U(\mathbf{x})\)</span>\)</span></p>
+<h3 id="boundary-conditions">Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permanent link">&para;</a></h3>
+<p>Handle different boundary conditions:</p>
+<p><strong>Periodic Boundaries</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{x}(L) = \mathbf{x}(0)\)</span>\)</span></p>
+<p><strong>Reflecting Boundaries</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{v} \cdot \mathbf{n} = 0\)</span>\)</span> at boundaries</p>
+<p><strong>Absorbing Boundaries</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(p(\mathbf{x}) = 0\)</span>\)</span> at boundaries</p>
+<h2 id="multi-modal-generation">Multi-Modal Generation<a class="headerlink" href="#multi-modal-generation" title="Permanent link">&para;</a></h2>
+<h3 id="mixture-models">Mixture Models<a class="headerlink" href="#mixture-models" title="Permanent link">&para;</a></h3>
+<p>Generate from multiple modes:
+<span class="arithmatex">\(<span class="arithmatex">\(p(\mathbf{x}) = \sum_k \pi_k p_k(\mathbf{x})\)</span>\)</span></p>
+<p>Each mode has its own energy function:
+<span class="arithmatex">\(<span class="arithmatex">\(U_k(\mathbf{x}) = U_{\text{base}}(\mathbf{x}) + V_k(\mathbf{x})\)</span>\)</span></p>
+<h3 id="mode-switching">Mode Switching<a class="headerlink" href="#mode-switching" title="Permanent link">&para;</a></h3>
+<p>Allow transitions between modes during generation:
+<span class="arithmatex">\(<span class="arithmatex">\(P(k \to j) = \exp\left(-\frac{U_j - U_k}{k_B T}\right)\)</span>\)</span></p>
+<h3 id="hierarchical-generation">Hierarchical Generation<a class="headerlink" href="#hierarchical-generation" title="Permanent link">&para;</a></h3>
+<p>Generate at multiple scales:</p>
+<ol>
+<li>Global structure</li>
+<li>Local details</li>
+<li>Fine-scale features</li>
+</ol>
+<h2 id="conditional-generation">Conditional Generation<a class="headerlink" href="#conditional-generation" title="Permanent link">&para;</a></h2>
+<h3 id="conditional-score-models">Conditional Score Models<a class="headerlink" href="#conditional-score-models" title="Permanent link">&para;</a></h3>
+<p>Score function conditioned on context:
+<span class="arithmatex">\(<span class="arithmatex">\(s_\theta(\mathbf{x}, t | \mathbf{c}) = \nabla_{\mathbf{x}} \log p_t(\mathbf{x} | \mathbf{c})\)</span>\)</span></p>
+<h3 id="classifier-guidance">Classifier Guidance<a class="headerlink" href="#classifier-guidance" title="Permanent link">&para;</a></h3>
+<p>Use external classifier for guidance:
+<span class="arithmatex">\(<span class="arithmatex">\(\tilde{s}_\theta(\mathbf{x}, t) = s_\theta(\mathbf{x}, t) + w \nabla_{\mathbf{x}} \log p_{\phi}(y | \mathbf{x})\)</span>\)</span></p>
+<h3 id="classifier-free-guidance">Classifier-Free Guidance<a class="headerlink" href="#classifier-free-guidance" title="Permanent link">&para;</a></h3>
+<p>Self-contained conditional generation:
+<span class="arithmatex">\(<span class="arithmatex">\(\tilde{s}_\theta(\mathbf{x}, t) = s_\theta(\mathbf{x}, t | \mathbf{c}) + w(s_\theta(\mathbf{x}, t | \mathbf{c}) - s_\theta(\mathbf{x}, t))\)</span>\)</span></p>
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h3 id="molecular-dynamics">Molecular Dynamics<a class="headerlink" href="#molecular-dynamics" title="Permanent link">&para;</a></h3>
+<p>Generate molecular configurations:</p>
+<ul>
+<li>Protein folding trajectories</li>
+<li>Chemical reaction pathways</li>
+<li>Drug design and optimization</li>
+</ul>
+<h3 id="material-design">Material Design<a class="headerlink" href="#material-design" title="Permanent link">&para;</a></h3>
+<p>Generate new materials:</p>
+<ul>
+<li>Crystal structures</li>
+<li>Polymer configurations</li>
+<li>Nanoparticle assemblies</li>
+</ul>
+<h3 id="climate-modeling">Climate Modeling<a class="headerlink" href="#climate-modeling" title="Permanent link">&para;</a></h3>
+<p>Generate weather patterns:</p>
+<ul>
+<li>Temperature distributions</li>
+<li>Precipitation patterns</li>
+<li>Extreme event simulations</li>
+</ul>
+<h3 id="fluid-dynamics">Fluid Dynamics<a class="headerlink" href="#fluid-dynamics" title="Permanent link">&para;</a></h3>
+<p>Generate flow fields:</p>
+<ul>
+<li>Turbulent flows</li>
+<li>Heat transfer patterns</li>
+<li>Multiphase flows</li>
+</ul>
+<h2 id="advanced-techniques">Advanced Techniques<a class="headerlink" href="#advanced-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="neural-odes-for-diffusion">Neural ODEs for Diffusion<a class="headerlink" href="#neural-odes-for-diffusion" title="Permanent link">&para;</a></h3>
+<p>Use neural ODEs for continuous-time modeling:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{d\mathbf{x}}{dt} = f_\theta(\mathbf{x}, t)\)</span>\)</span></p>
+<h3 id="stochastic-interpolants">Stochastic Interpolants<a class="headerlink" href="#stochastic-interpolants" title="Permanent link">&para;</a></h3>
+<p>Learn paths between distributions:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{x}_t = (1-t)\mathbf{x}_0 + t\mathbf{x}_1 + \sigma_t \boldsymbol{\epsilon}\)</span>\)</span></p>
+<h3 id="flow-matching">Flow Matching<a class="headerlink" href="#flow-matching" title="Permanent link">&para;</a></h3>
+<p>Match vector fields instead of scores:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathcal{L}_{\text{FM}} = \mathbb{E}_{t,\mathbf{x}_0,\mathbf{x}_1}\left[\left\|v_\theta(\mathbf{x}_t, t) - u_t(\mathbf{x}_t)\right\|^2\right]\)</span>\)</span></p>
+<h2 id="evaluation-metrics">Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="thermodynamic-consistency">Thermodynamic Consistency<a class="headerlink" href="#thermodynamic-consistency" title="Permanent link">&para;</a></h3>
+<p>Check thermodynamic relations:</p>
+<ul>
+<li><span class="arithmatex">\(dU = TdS - PdV\)</span></li>
+<li><span class="arithmatex">\(G = H - TS\)</span></li>
+<li>Maxwell relations</li>
+</ul>
+<h3 id="sample-quality">Sample Quality<a class="headerlink" href="#sample-quality" title="Permanent link">&para;</a></h3>
+<p>Standard generative model metrics:</p>
+<ul>
+<li>Fréchet Inception Distance (FID)</li>
+<li>Inception Score (IS)</li>
+<li>Kernel Inception Distance (KID)</li>
+</ul>
+<h3 id="physical-realism">Physical Realism<a class="headerlink" href="#physical-realism" title="Permanent link">&para;</a></h3>
+<p>Domain-specific validation:</p>
+<ul>
+<li>Energy conservation</li>
+<li>Force consistency</li>
+<li>Stability analysis</li>
+</ul>
+<h2 id="computational-considerations">Computational Considerations<a class="headerlink" href="#computational-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="memory-optimization">Memory Optimization<a class="headerlink" href="#memory-optimization" title="Permanent link">&para;</a></h3>
+<p>Techniques for large-scale generation:</p>
+<ul>
+<li>Gradient checkpointing</li>
+<li>Mixed precision training</li>
+<li>Model parallelism</li>
+</ul>
+<h3 id="acceleration-methods">Acceleration Methods<a class="headerlink" href="#acceleration-methods" title="Permanent link">&para;</a></h3>
+<p>Speed up sampling:</p>
+<ul>
+<li>Distillation models</li>
+<li>Deterministic sampling</li>
+<li>Few-step generation</li>
+</ul>
+<h3 id="hardware-optimization">Hardware Optimization<a class="headerlink" href="#hardware-optimization" title="Permanent link">&para;</a></h3>
+<p>Efficient implementation:</p>
+<ul>
+<li>GPU optimization</li>
+<li>TPU acceleration</li>
+<li>Distributed sampling</li>
+</ul>
+<h2 id="future-directions">Future Directions<a class="headerlink" href="#future-directions" title="Permanent link">&para;</a></h2>
+<h3 id="quantum-diffusion-models">Quantum Diffusion Models<a class="headerlink" href="#quantum-diffusion-models" title="Permanent link">&para;</a></h3>
+<p>Extension to quantum systems:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial \rho}{\partial t} = -\frac{i}{\hbar}[H, \rho] + \mathcal{L}[\rho]\)</span>\)</span></p>
+<h3 id="non-equilibrium-diffusion">Non-Equilibrium Diffusion<a class="headerlink" href="#non-equilibrium-diffusion" title="Permanent link">&para;</a></h3>
+<p>Models for driven systems:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{d\mathbf{x}}{dt} = -\nabla U(\mathbf{x}) + \mathbf{F}_{\text{drive}} + \boldsymbol{\xi}\)</span>\)</span></p>
+<h3 id="adaptive-neural-architectures">Adaptive Neural Architectures<a class="headerlink" href="#adaptive-neural-architectures" title="Permanent link">&para;</a></h3>
+<p>Networks that adapt during generation:
+<span class="arithmatex">\(<span class="arithmatex">\(\theta_{t+1} = \theta_t + \Delta\theta(\mathbf{x}_t, t)\)</span>\)</span></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Thermodynamic diffusion models provide a powerful framework for generating samples that respect physical principles and constraints. By incorporating explicit thermodynamic variables and conservation laws, these models can generate realistic and physically consistent samples across a wide range of applications, from molecular systems to climate modeling.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/krish567366/Entropic-AI" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/eai/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.select", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
