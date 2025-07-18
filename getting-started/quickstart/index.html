@@ -2344,7 +2344,7 @@
 <li>8GB+ RAM recommended</li>
 </ul>
 <h3 id="install-from-pypi">Install from PyPI<a class="headerlink" href="#install-from-pypi" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>eai
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>entropic-ai
 </span></code></pre></div>
 <h3 id="development-installation">Development Installation<a class="headerlink" href="#development-installation" title="Permanent link">&para;</a></h3>
 <p>For the latest features and development:</p>
@@ -2356,7 +2356,7 @@
 <p>Let's start with a simple example that demonstrates the core principle of Entropic AI: evolving order from chaos.</p>
 <h3 id="example-1-basic-chaos-to-order-evolution">Example 1: Basic Chaos-to-Order Evolution<a class="headerlink" href="#example-1-basic-chaos-to-order-evolution" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai</span><span class="w"> </span><span class="kn">import</span> <span class="n">EntropicNetwork</span><span class="p">,</span> <span class="n">ComplexityOptimizer</span><span class="p">,</span> <span class="n">GenerativeDiffuser</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span> <span class="kn">import</span><span class="w"> </span><span class="nn">EntropicNetwork</span><span class="o">,</span><span class="w"> </span><span class="nn">ComplexityOptimizer</span><span class="o">,</span><span class="w"> </span><span class="nn">GenerativeDiffuser</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Step 1: Create a thermodynamic neural network</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">network</span> <span class="o">=</span> <span class="n">EntropicNetwork</span><span class="p">(</span>
@@ -2396,7 +2396,7 @@
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Final entropy: 0.234
 </span></code></pre></div>
 <h3 id="example-2-monitoring-the-thermodynamic-process">Example 2: Monitoring the Thermodynamic Process<a class="headerlink" href="#example-2-monitoring-the-thermodynamic-process" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_entropy_evolution</span><span class="p">,</span> <span class="n">plot_energy_landscape</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">utils</span> <span class="kn">import</span><span class="w"> </span><span class="nn">plot_entropy_evolution</span><span class="o">,</span><span class="w"> </span><span class="nn">plot_energy_landscape</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Enable detailed monitoring</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">diffuser</span><span class="o">.</span><span class="n">enable_monitoring</span><span class="p">()</span>
@@ -2457,7 +2457,7 @@
 <h2 id="core-applications">Core Applications<a class="headerlink" href="#core-applications" title="Permanent link">&para;</a></h2>
 <h3 id="molecule-evolution">Molecule Evolution<a class="headerlink" href="#molecule-evolution" title="Permanent link">&para;</a></h3>
 <p>Design novel molecular structures:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">MoleculeEvolution</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">applications</span> <span class="kn">import</span><span class="w"> </span><span class="nn">MoleculeEvolution</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Initialize molecular evolver</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">evolver</span> <span class="o">=</span> <span class="n">MoleculeEvolution</span><span class="p">(</span>
@@ -2484,7 +2484,7 @@
 </span></code></pre></div>
 <h3 id="circuit-design">Circuit Design<a class="headerlink" href="#circuit-design" title="Permanent link">&para;</a></h3>
 <p>Generate thermodynamically optimal digital circuits:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">CircuitEvolution</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">applications</span> <span class="kn">import</span><span class="w"> </span><span class="nn">CircuitEvolution</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Define target logic function</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">target_function</span><span class="p">(</span><span class="n">inputs</span><span class="p">):</span>
@@ -2512,7 +2512,7 @@
 </span></code></pre></div>
 <h3 id="theory-discovery">Theory Discovery<a class="headerlink" href="#theory-discovery" title="Permanent link">&para;</a></h3>
 <p>Find symbolic expressions that explain data:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">TheoryDiscovery</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">applications</span> <span class="kn">import</span><span class="w"> </span><span class="nn">TheoryDiscovery</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Generate some experimental data</span>
@@ -2575,7 +2575,7 @@
 </span></code></pre></div>
 <h2 id="monitoring-and-visualization">Monitoring and Visualization<a class="headerlink" href="#monitoring-and-visualization" title="Permanent link">&para;</a></h2>
 <h3 id="real-time-monitoring">Real-time Monitoring<a class="headerlink" href="#real-time-monitoring" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThermodynamicMonitor</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">utils</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ThermodynamicMonitor</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># Set up monitoring</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">monitor</span> <span class="o">=</span> <span class="n">ThermodynamicMonitor</span><span class="p">(</span>
@@ -2593,7 +2593,7 @@
 </span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="n">monitor</span><span class="o">.</span><span class="n">show_live_plots</span><span class="p">()</span>
 </span></code></pre></div>
 <h3 id="visualization-tools">Visualization Tools<a class="headerlink" href="#visualization-tools" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">eai.utils.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">entropic</span><span class="o">-</span><span class="n">ai</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">visualization</span> <span class="kn">import</span><span class="w"> </span><span class="p">(</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">plot_energy_landscape</span><span class="p">,</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">plot_phase_space</span><span class="p">,</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">plot_complexity_evolution</span><span class="p">,</span>
